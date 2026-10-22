@@ -1,0 +1,11 @@
+{
+  "dbConfig": {
+    "type": "mssql",
+    "host": "172.16.10.6\\SQL2019",
+    "port": 1433,
+    "database": "uhr_waseel",
+    "user": "BADAL",
+    "password": "badal"
+  },
+  "providerType": "default_plus"
+}

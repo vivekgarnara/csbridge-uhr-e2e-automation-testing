@@ -1,0 +1,648 @@
+{
+    "time": "2026-06-29T11:09:37.512Z",
+    "results": [
+        {
+            "query": "SELECT DISTINCT\n    c.provclaimno,\n    b.beneficiaryid,\n    b.patientfileno,\n    b.firstname,\n    b.middlename,\n    b.lastname,\n    b.fullname,\n    b.dob,\n    b.gender,\n    b.nationality,\n    b.documenttype,\n    b.documentid,\n    b.contactnumber,\n    b.ehealthid,\n    b.residencytype,\n    b.maritalstatus,\n    b.bloodgroup,\n    b.preferredlanguage,\n    b.email,\n    b.addressline,\n    b.addressstreetname,\n    b.addresscity,\n    b.addressdistrict,\n    b.addressstate,\n    b.addresspostalcode,\n    b.addresscountry,\n    b.occupation,\n    b.religion,\n    b.prior_patient_id,\n    b.created_date,\n    b.updated_date\nFROM\n    nphies_beneficiary b\n    INNER JOIN nphies_claiminfo c ON c.beneficiaryid = b.beneficiaryid\n    INNER JOIN nphies_events e ON e.provclaimno = c.provclaimno\n    AND e.issubmitted = 0\nORDER BY\n    b.beneficiaryid",
+            "result": [
+                {
+                    "dob": "1992-07-03T00:00:00.000Z",
+                    "email": "abc@gmail.com",
+                    "gender": "male",
+                    "lastname": "Alsubaie",
+                    "religion": "islam",
+                    "ehealthid": "30511223344557",
+                    "firstname": "Falah",
+                    "bloodgroup": "O_PLUS",
+                    "documentid": "1092092632",
+                    "middlename": "Abduallah",
+                    "occupation": "engineer",
+                    "addresscity": "Riyadh",
+                    "addressline": "123 King Fahad Rd",
+                    "nationality": "SAU",
+                    "provclaimno": "CLM5640026002",
+                    "addressstate": "Riyadh",
+                    "created_date": "2026-03-10T03:27:59.583Z",
+                    "documenttype": "NATIONAL_ID",
+                    "updated_date": "2026-05-18T11:53:33.232Z",
+                    "beneficiaryid": "5638114441",
+                    "contactnumber": "+960559697177",
+                    "maritalstatus": "M",
+                    "patientfileno": "NC06-002687",
+                    "residencytype": "citizen",
+                    "addresscountry": "SAU",
+                    "addressdistrict": "Al-Murjan",
+                    "prior_patient_id": "",
+                    "addresspostalcode": "12271",
+                    "addressstreetname": "King Fahad Rd",
+                    "preferredlanguage": "ar"
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_beneficiary"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cad.provclaimno,\n    cad.accidenttype,\n    cad.accidentdate,\n    cad.addressstreetname,\n    cad.addresscity,\n    cad.addressstate,\n    cad.addresscountry,\n    cad.created_date,\n    cad.updated_date\nFROM nphies_claimaccidentdetail cad\nINNER JOIN nphies_events e\n    ON e.provclaimno = cad.provclaimno\n   AND e.issubmitted = 0\nORDER BY cad.provclaimno",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_claimaccidentdetail"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cct.provclaimno,\n    cct.sequenceno,\n    cct.physicianid,\n    cct.physicianname,\n    cct.practitionerrole,\n    cct.careteamrole,\n    cct.careteamqualification,\n    cct.created_date,\n    cct.updated_date\nFROM nphies_claimcareteam cct\nINNER JOIN nphies_events e\n    ON e.provclaimno = cct.provclaimno\n   AND e.issubmitted = 0\nORDER BY cct.provclaimno, cct.sequenceno",
+            "result": [
+                {
+                    "sequenceno": "148366",
+                    "physicianid": "00TEST1982",
+                    "provclaimno": "CLM5640026002",
+                    "careteamrole": "primary",
+                    "created_date": "2026-06-04T11:15:04.310Z",
+                    "updated_date": "2026-06-04T11:15:04.310Z",
+                    "physicianname": "Test Doctor - test",
+                    "practitionerrole": "ENDOCRINOLOGY_THYROID_CANCER",
+                    "careteamqualification": "01.00"
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_claimcareteam"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cd.provclaimno,\n    cd.sequenceno,\n    cd.diagnosiscode,\n    cd.diagnosisdesc,\n    cd.diagnosistype,\n    cd.onadmission,\n    cd.conditiononset,\n    cd.created_date,\n    cd.updated_date\nFROM nphies_claimdiagnosis cd\nINNER JOIN nphies_events e\n    ON e.provclaimno = cd.provclaimno\n   AND e.issubmitted = 0\nORDER BY cd.provclaimno, cd.sequenceno",
+            "result": [
+                {
+                    "sequenceno": "1",
+                    "onadmission": "",
+                    "provclaimno": "CLM5640026002",
+                    "created_date": "2026-06-04T11:15:03.843Z",
+                    "updated_date": "2026-06-29T13:11:59.811Z",
+                    "diagnosiscode": "D14.3",
+                    "diagnosisdesc": "Benign neoplasm of bronchus and lung",
+                    "diagnosistype": "PRINCIPAL",
+                    "conditiononset": ""
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_claimdiagnosis"
+        },
+        {
+            "query": "SELECT DISTINCT\n    ce.provclaimno,\n    ce.encounterid,\n    ce.encounterstartdate,\n    ce.encounterenddate,\n    ce.encounterclass,\n    ce.encounterservicetype,\n    ce.priority,\n    ce.serviceprovider,\n    ce.encounterstatus,\n    ce.causeofdeath,\n    ce.serviceeventtype,\n    ce.room,\n    ce.bed,\n    ce.point_of_care,\n    ce.facility_id,\n    ce.created_date,\n    ce.updated_date\nFROM\n    nphies_claimencounters ce\n    INNER JOIN nphies_events e ON e.provclaimno = ce.provclaimno\n    AND e.issubmitted = 0\nORDER BY\n    ce.provclaimno,\n    ce.encounterid\n\n    ",
+            "result": [
+                {
+                    "bed": "",
+                    "room": "",
+                    "priority": "routine",
+                    "encounterid": "CLM5640026002",
+                    "facility_id": "",
+                    "provclaimno": "CLM5640026002",
+                    "causeofdeath": "",
+                    "created_date": "2026-06-04T11:15:11.683Z",
+                    "updated_date": "2026-06-04T11:15:11.683Z",
+                    "point_of_care": "",
+                    "encounterclass": "AMB",
+                    "encounterstatus": "finished",
+                    "serviceprovider": null,
+                    "encounterenddate": "2026-06-04T00:00:00.000Z",
+                    "serviceeventtype": "",
+                    "encounterstartdate": "2026-06-04T00:00:00.000Z",
+                    "encounterservicetype": "1"
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_claimencounters"
+        },
+        {
+            "query": "SELECT DISTINCT\n    c.provclaimno,\n    c.episodeid,\n    c.isnewborn,\n    c.isreferral,\n    c.referringprovidername,\n    c.claimtype,\n    c.claimsubtype,\n    c.providernphiesid,\n    c.claimcreateddate,\n    c.accountingperiod,\n    c.billableperiodstart,\n    c.billableperiodend,\n    c.coverageid,\n    c.beneficiaryid,\n    c.subscriberid,\n    c.total,\n    c.prescription,\n    c.providernphiesname,\n    c.prior_visit_number,\n    c.created_date,\n    c.updated_date\nFROM\n    nphies_claiminfo c\n    INNER JOIN nphies_events e ON e.provclaimno = c.provclaimno\n    AND e.issubmitted = 0\nORDER BY\n    c.updated_date DESC,\n    c.created_date DESC",
+            "result": [
+                {
+                    "total": "14800",
+                    "claimtype": "pharmacy",
+                    "episodeid": "",
+                    "isnewborn": "N",
+                    "coverageid": null,
+                    "isreferral": "N",
+                    "provclaimno": "CLM5640026002",
+                    "claimsubtype": "outpatient",
+                    "created_date": "2026-06-04T11:14:57.093Z",
+                    "prescription": "",
+                    "subscriberid": "5638114441",
+                    "updated_date": "2026-06-04T11:14:57.093Z",
+                    "beneficiaryid": "5638114441",
+                    "accountingperiod": "2026-06-04T00:00:00.000Z",
+                    "claimcreateddate": "2026-06-04T00:00:00.000Z",
+                    "providernphiesid": "15000000112233",
+                    "billableperiodend": "2026-06-04T00:00:00.000Z",
+                    "prior_visit_number": "",
+                    "providernphiesname": "",
+                    "billableperiodstart": "2026-06-04T00:00:00.000Z",
+                    "referringprovidername": ""
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_claiminfo"
+        },
+        {
+            "query": "SELECT DISTINCT\n    ci.provclaimno,\n    ci.invoiceno,\n    ci.sequenceno,\n    ci.servicetype,\n    ci.servicecode,\n    ci.servicedesc,\n    ci.ispackage,\n    ci.quantity,\n    ci.quantitycode,\n    ci.unitprice,\n    ci.discount,\n    ci.factor,\n    ci.patientshare,\n    ci.payershare,\n    ci.tax,\n    ci.net,\n    ci.startdate,\n    ci.enddate,\n    ci.created_date,\n    ci.updated_date\nFROM nphies_claimitem ci\nINNER JOIN nphies_events e\n    ON e.provclaimno = ci.provclaimno\n   AND e.issubmitted = 0\nORDER BY ci.provclaimno, ci.sequenceno",
+            "result": [
+                {
+                    "net": "300",
+                    "tax": "0",
+                    "factor": "1",
+                    "enddate": "1900-01-01T00:00:00.000Z",
+                    "discount": "0",
+                    "quantity": "14",
+                    "invoiceno": "",
+                    "ispackage": "False",
+                    "startdate": "1900-01-01T00:00:00.000Z",
+                    "unitprice": "300",
+                    "payershare": "300",
+                    "sequenceno": "61562778",
+                    "provclaimno": "CLM5640026002",
+                    "servicecode": "540101-0422-6410",
+                    "servicedesc": "Bedside Ultrasound",
+                    "servicetype": "medication-prescription",
+                    "created_date": "2026-06-04T11:15:08.350Z",
+                    "patientshare": "300",
+                    "quantitycode": "TABLET",
+                    "updated_date": "2026-06-04T11:15:08.350Z"
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_claimitem"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cd.provclaimno,\n    cd.item_sequenceno,\n    cd.form_code,\n    cd.form_display_name,\n    cd.duration_unit,\n    cd.duration_value,\n    cd.period_start,\n    cd.period_end,\n    cd.instruction,\n    cd.route,\n    cd.as_needed,\n    cd.created_date,\n    cd.updated_date\nFROM\n    nphies_claimitem_dosage cd\n    INNER JOIN nphies_events e ON e.provclaimno = cd.provclaimno\n    AND e.issubmitted = 0\nORDER BY\n    cd.provclaimno,\n    cd.item_sequenceno",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_claimitem_dosage"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cm.provclaimno,\n    cm.item_sequenceno,\n    cm.medicine_code,\n    cm.medicine_display_name,\n    cm.ingredient,\n    cm.strength_value,\n    cm.strength_unit,\n    cm.day_supply,\n    cm.refills,\n    cm.receiver_healthid,\n    cm.category,\n    cm.reasonformedicine,\n    cm.handover_date_time,\n    cm.packaging_code,\n    cm.packaging_display_name,\n    cm.dispense_type,\n    cm.created_date,\n    cm.updated_date\nFROM\n    nphies_claimitem_medication cm\n    INNER JOIN nphies_events e ON e.provclaimno = cm.provclaimno\n    AND e.issubmitted = 0\nORDER BY\n    cm.provclaimno,\n    cm.item_sequenceno",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_claimitem_medication"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cp.provclaimno,\n    cp.item_sequenceno,\n    cp.procedure_code,\n    cp.procedure_description,\n    cp.modality_code,\n    cp.modality_description,\n    cp.bodysite_code,\n    cp.bodysite_description,\n    cp.order_identifier,\n    cp.created_date,\n    cp.updated_date\nFROM\n    nphies_claimitem_procedure cp\n    INNER JOIN nphies_events e ON e.provclaimno = cp.provclaimno\n    AND e.issubmitted = 0\nORDER BY\n    cp.provclaimno,\n    cp.item_sequenceno",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_claimitem_procedure"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cid.itemsequenceno,\n    cid.provclaimno,\n    cid.sequenceno,\n    cid.servicetype,\n    cid.servicecode,\n    cid.servicedesc,\n    cid.quantity,\n    cid.quantitycode,\n    cid.unitprice,\n    cid.tax,\n    cid.net,\n    cid.prescribeddrugcode,\n    cid.created_date,\n    cid.updated_date\nFROM nphies_claimitemdetails cid\nINNER JOIN nphies_events e\n    ON e.provclaimno = cid.provclaimno\n   AND e.issubmitted = 0\nORDER BY cid.provclaimno, cid.sequenceno",
+            "result": [
+                {
+                    "net": "300",
+                    "tax": "0",
+                    "quantity": "1",
+                    "unitprice": "300",
+                    "sequenceno": "42457161",
+                    "provclaimno": "CLM5640026002",
+                    "servicecode": "76536-201",
+                    "servicedesc": "Bedside Ultrasound",
+                    "servicetype": "Imaging",
+                    "created_date": "2026-06-04T11:15:09.573Z",
+                    "quantitycode": "",
+                    "updated_date": "2026-06-04T11:15:09.573Z",
+                    "itemsequenceno": "61562778",
+                    "prescribeddrugcode": ""
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_claimitemdetails"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cpd.provclaimno,\n    cpd.preauthrefno,\n    cpd.created_date,\n    cpd.updated_date\nFROM nphies_claimpreauthdetails cpd\nINNER JOIN nphies_events e\n    ON e.provclaimno = cpd.provclaimno\n   AND e.issubmitted = 0\nORDER BY cpd.provclaimno",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_claimpreauthdetails"
+        },
+        {
+            "query": "SELECT DISTINCT\n    csi.provclaimno,\n    csi.sequenceno,\n    csi.category,\n    csi.reason,\n    csi.supportingvalue,\n    csi.attachmentfilename,\n    csi.attachmenttype,\n    csi.code,\n    csi.unit,\n    csi.timingperiodfrom,\n    csi.timingperiodto,\n    csi.created_date,\n    csi.updated_date\nFROM nphies_claimsupportinginfo csi\nINNER JOIN nphies_events e\n    ON e.provclaimno = csi.provclaimno\n   AND e.issubmitted = 0\nORDER BY csi.provclaimno, csi.sequenceno",
+            "result": [
+                {
+                    "code": "",
+                    "unit": "",
+                    "reason": "",
+                    "category": "Allergy",
+                    "sequenceno": "45026632",
+                    "provclaimno": "CLM5640026002",
+                    "created_date": "2026-06-04T11:15:06.780Z",
+                    "updated_date": "2026-06-29T14:06:54.577Z",
+                    "attachmenttype": "",
+                    "timingperiodto": "2026-02-28T00:00:00.000Z",
+                    "supportingvalue": "102263004;;FOOD_ALLERGY;;SEVERE;;Eggs (edible)",
+                    "timingperiodfrom": "2026-01-01T00:00:00.000Z",
+                    "attachmentfilename": ""
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "sequenceno": "61562771",
+                    "category": "prescription",
+                    "reason": "",
+                    "supportingvalue": "",
+                    "attachmentfilename": "",
+                    "attachmenttype": "",
+                    "code": "",
+                    "unit": "",
+                    "timingperiodfrom": "2026-06-04T00:00:00.000Z",
+                    "timingperiodto": "2026-06-10T00:00:00.000Z",
+                    "created_date": "2026-06-04T11:15:06.780Z",
+                    "updated_date": "2026-06-04T11:15:06.780Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "sequenceno": "61562772",
+                    "category": "medication-status",
+                    "reason": "",
+                    "supportingvalue": "ACTIVE",
+                    "attachmentfilename": "",
+                    "attachmenttype": "",
+                    "code": "",
+                    "unit": "",
+                    "timingperiodfrom": "",
+                    "timingperiodto": "",
+                    "created_date": "2026-06-04T11:15:06.780Z",
+                    "updated_date": "2026-06-04T11:15:06.780Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "sequenceno": "61562773",
+                    "category": "medication-type",
+                    "reason": "",
+                    "supportingvalue": "UNCONTROLLED",
+                    "attachmentfilename": "",
+                    "attachmenttype": "",
+                    "code": "OUTPATIENT",
+                    "unit": "",
+                    "timingperiodfrom": "",
+                    "timingperiodto": "",
+                    "created_date": "2026-06-04T11:15:06.780Z",
+                    "updated_date": "2026-06-04T11:15:06.780Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "sequenceno": "61562774",
+                    "category": "medication-intent",
+                    "reason": "",
+                    "supportingvalue": "ORDER",
+                    "attachmentfilename": "",
+                    "attachmenttype": "",
+                    "code": "",
+                    "unit": "",
+                    "timingperiodfrom": "",
+                    "timingperiodto": "",
+                    "created_date": "2026-06-04T11:15:06.780Z",
+                    "updated_date": "2026-06-04T11:15:06.780Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "sequenceno": "61562775",
+                    "category": "medication-prescription-info",
+                    "reason": "Mix 2 ingrident and make this spesific medicine",
+                    "supportingvalue": "Take after meals",
+                    "attachmentfilename": "",
+                    "attachmenttype": "",
+                    "code": "",
+                    "unit": "",
+                    "timingperiodfrom": "2026-06-04T00:00:00.000Z",
+                    "timingperiodto": "2026-06-10T00:00:00.000Z",
+                    "created_date": "2026-06-04T11:15:06.780Z",
+                    "updated_date": "2026-06-04T11:15:06.780Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "sequenceno": "61562776",
+                    "category": "medication-route-and-supply",
+                    "reason": "",
+                    "supportingvalue": "7",
+                    "attachmentfilename": "",
+                    "attachmenttype": "",
+                    "code": "ORAL",
+                    "unit": "DAY",
+                    "timingperiodfrom": "",
+                    "timingperiodto": "",
+                    "created_date": "2026-06-04T11:15:06.780Z",
+                    "updated_date": "2026-06-04T11:15:06.780Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "sequenceno": "61562777",
+                    "category": "medication-dosage-duration",
+                    "reason": "",
+                    "supportingvalue": "5",
+                    "attachmentfilename": "",
+                    "attachmenttype": "",
+                    "code": "",
+                    "unit": "DAY",
+                    "timingperiodfrom": "2026-06-04T00:00:00.000Z",
+                    "timingperiodto": "2026-06-09T00:00:00.000Z",
+                    "created_date": "2026-06-04T11:15:06.780Z",
+                    "updated_date": "2026-06-04T11:15:06.780Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "sequenceno": "61562779",
+                    "category": "medication-dosage",
+                    "reason": "",
+                    "supportingvalue": "3",
+                    "attachmentfilename": "",
+                    "attachmenttype": "",
+                    "code": "",
+                    "unit": "TABLET",
+                    "timingperiodfrom": "",
+                    "timingperiodto": "",
+                    "created_date": "2026-06-04T11:15:06.780Z",
+                    "updated_date": "2026-06-04T11:15:06.780Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "sequenceno": "61562780",
+                    "category": "medication-dosage-instruction",
+                    "reason": "Drink plenty of water",
+                    "supportingvalue": "Take one tablet twice daily after meals",
+                    "attachmentfilename": "",
+                    "attachmenttype": "",
+                    "code": "false",
+                    "unit": "",
+                    "timingperiodfrom": "",
+                    "timingperiodto": "",
+                    "created_date": "2026-06-04T11:15:06.780Z",
+                    "updated_date": "2026-06-04T11:15:06.780Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "sequenceno": "61562781",
+                    "category": "medication-period",
+                    "code": "2",
+                    "supportingvalue": "1",
+                    "unit": "DAY",
+                    "reason": "POWDER_4803",
+                    "attachmentfilename": "",
+                    "attachmenttype": "",
+                    "timingperiodfrom": "",
+                    "timingperiodto": "",
+                    "created_date": "2026-06-04T11:15:06.780Z",
+                    "updated_date": "2026-06-04T11:15:06.780Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "sequenceno": "61562782",
+                    "category": "medication-practitioner-info",
+                    "reason": "doctor@testhospital.sa",
+                    "supportingvalue": "King Fahad Medical City;;King Fahad Road;;Riyadh;;12271;;SAU",
+                    "attachmentfilename": "",
+                    "attachmenttype": "",
+                    "code": "+960551234567",
+                    "unit": "",
+                    "timingperiodfrom": "",
+                    "timingperiodto": "",
+                    "created_date": "2026-06-04T11:15:06.780Z",
+                    "updated_date": "2026-06-04T11:15:06.780Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "sequenceno": "61562783",
+                    "category": "chief-complaint",
+                    "reason": "",
+                    "supportingvalue": "Patient complains of severe abdominal pain.",
+                    "attachmentfilename": "",
+                    "attachmenttype": "",
+                    "code": "",
+                    "unit": "",
+                    "timingperiodfrom": "",
+                    "timingperiodto": "",
+                    "created_date": "2026-06-04T11:15:06.780Z",
+                    "updated_date": "2026-06-04T11:15:06.780Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "sequenceno": "61562784",
+                    "category": "vital-sign-height",
+                    "reason": "",
+                    "supportingvalue": "175",
+                    "attachmentfilename": "",
+                    "attachmenttype": "",
+                    "code": "",
+                    "unit": "cm",
+                    "timingperiodfrom": "",
+                    "timingperiodto": "",
+                    "created_date": "2026-06-04T11:15:06.780Z",
+                    "updated_date": "2026-06-04T11:15:06.780Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "sequenceno": "61562785",
+                    "category": "vital-sign-weight",
+                    "reason": "",
+                    "supportingvalue": "72",
+                    "attachmentfilename": "",
+                    "attachmenttype": "",
+                    "code": "",
+                    "unit": "kg",
+                    "timingperiodfrom": "",
+                    "timingperiodto": "",
+                    "created_date": "2026-06-04T11:15:06.780Z",
+                    "updated_date": "2026-06-04T11:15:06.780Z"
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_claimsupportinginfo"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cvp.provclaimno,\n    cvp.visionprescriptionid,\n    cvp.datewritten,\n    cvp.careteamsequence,\n    cvp.product,\n    cvp.eye,\n    cvp.sphere,\n    cvp.cylinder,\n    cvp.axis,\n    cvp.prismamount,\n    cvp.prismbase,\n    cvp.lenspower,\n    cvp.lenscolor,\n    cvp.lensbrand,\n    cvp.created_date,\n    cvp.updated_date\nFROM nphies_claimvisionprescription cvp\nINNER JOIN nphies_events e\n    ON e.provclaimno = cvp.provclaimno\n   AND e.issubmitted = 0\nORDER BY cvp.provclaimno, cvp.visionprescriptionid",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_claimvisionprescription"
+        },
+        {
+            "query": "SELECT DISTINCT\n    c.provclaimno,\n    cov.coverageid,\n    cov.memberid,\n    cov.expirydate,\n    cov.payernphiesid,\n    cov.tpanphiesid,\n    cov.relationwithsubscriber,\n    cov.policyholder,\n    cov.policynumber,\n    cov.coveragetype,\n    cov.beneficiaryid,\n    cov.created_date,\n    cov.updated_date\nFROM nphies_coverage cov\nINNER JOIN nphies_claiminfo c\n    ON c.coverageid = cov.coverageid\nINNER JOIN nphies_events e\n    ON e.provclaimno = c.provclaimno\n   AND e.issubmitted = 0\nORDER BY cov.coverageid",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_coverage"
+        },
+        {
+            "query": "SELECT DISTINCT\n    c.provclaimno,\n    cc.coverageclassid,\n    cc.type,\n    cc.value,\n    cc.name,\n    cc.coverageid,\n    cc.created_date,\n    cc.updated_date\nFROM nphies_coverage_class cc\nINNER JOIN nphies_claiminfo c\n    ON c.coverageid = cc.coverageid\nINNER JOIN nphies_events e\n    ON e.provclaimno = c.provclaimno\n   AND e.issubmitted = 0\nORDER BY cc.coverageid, cc.coverageclassid",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_coverage_class"
+        },
+        {
+            "query": "SELECT DISTINCT\n    ce.provclaimno,\n    ee.encounteremergencyid,\n    ee.emergencyarrivalcode,\n    ee.emergencyservicestart,\n    ee.emergencydepartmentdisposition,\n    ee.triagecategory,\n    ee.triagedate,\n    ee.encounterid,\n    ee.created_date,\n    ee.updated_date\nFROM nphies_encounteremergency ee\nINNER JOIN nphies_claimencounters ce\n    ON ce.encounterid = ee.encounterid\nINNER JOIN nphies_events e\n    ON e.provclaimno = ce.provclaimno\n   AND e.issubmitted = 0\nORDER BY ee.encounterid, ee.encounteremergencyid",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_encounteremergency"
+        },
+        {
+            "query": "SELECT \n    e.eventid,\n    e.provclaimno,\n    e.eventtype,\n    e.createddate,\n    e.issubmitted,\n    e.created_date\nFROM nphies_events e\nWHERE e.issubmitted = 0\nORDER BY e.created_date DESC, e.eventid",
+            "result": [
+                {
+                    "eventid": "38",
+                    "eventtype": "MEDICATION_REQUEST",
+                    "createddate": "2026-06-04T11:15:07.033Z",
+                    "issubmitted": "false",
+                    "provclaimno": "CLM5640026002",
+                    "created_date": "2026-06-04T11:15:07.033Z"
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_events"
+        },
+        {
+            "query": "SELECT DISTINCT\n    ict.provclaimno,\n    ict.careteamsequenceno,\n    ict.itemsequenceno,\n    ict.created_date,\n    ict.updated_date\nFROM nphies_itemcareteam ict\nINNER JOIN nphies_events e\n    ON e.provclaimno = ict.provclaimno\n   AND e.issubmitted = 0\nORDER BY ict.provclaimno, ict.itemsequenceno",
+            "result": [
+                {
+                    "provclaimno": "CLM5640026002",
+                    "careteamsequenceno": "148366",
+                    "itemsequenceno": "61562782",
+                    "created_date": "2026-06-04T11:15:10.513Z",
+                    "updated_date": "2026-06-04T11:15:10.513Z"
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_itemcareteam"
+        },
+        {
+            "query": "SELECT DISTINCT\n    id.provclaimno,\n    id.diagnosissequenceno,\n    id.itemsequenceno,\n    id.created_date,\n    id.updated_date\nFROM nphies_itemdiagnosis id\nINNER JOIN nphies_events e\n    ON e.provclaimno = id.provclaimno\n   AND e.issubmitted = 0\nORDER BY id.provclaimno, id.itemsequenceno",
+            "result": [
+                {
+                    "provclaimno": "CLM5640026002",
+                    "created_date": "2026-06-04T11:15:10.153Z",
+                    "updated_date": "2026-06-04T11:15:10.153Z",
+                    "itemsequenceno": "61562778",
+                    "diagnosissequenceno": "1"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "created_date": "2026-06-04T11:15:10.153Z",
+                    "updated_date": "2026-06-04T11:15:10.153Z",
+                    "itemsequenceno": "61562778",
+                    "diagnosissequenceno": "2"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "created_date": "2026-06-04T11:15:10.153Z",
+                    "updated_date": "2026-06-04T11:15:10.153Z",
+                    "itemsequenceno": "61562778",
+                    "diagnosissequenceno": "3"
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_itemdiagnosis"
+        },
+        {
+            "query": "SELECT DISTINCT\n    isi.provclaimno,\n    isi.supportinginfosequenceno,\n    isi.itemsequenceno,\n    isi.created_date,\n    isi.updated_date\nFROM nphies_itemsupportinginfo isi\nINNER JOIN nphies_events e\n    ON e.provclaimno = isi.provclaimno\n   AND e.issubmitted = 0\nORDER BY isi.provclaimno, isi.itemsequenceno",
+            "result": [
+                {
+                    "provclaimno": "CLM5640026002",
+                    "supportinginfosequenceno": "61562771",
+                    "itemsequenceno": "61562778",
+                    "created_date": "2026-06-04T11:15:10.887Z",
+                    "updated_date": "2026-06-04T11:15:10.887Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "supportinginfosequenceno": "61562772",
+                    "itemsequenceno": "61562778",
+                    "created_date": "2026-06-04T11:15:10.887Z",
+                    "updated_date": "2026-06-04T11:15:10.887Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "supportinginfosequenceno": "61562773",
+                    "itemsequenceno": "61562778",
+                    "created_date": "2026-06-04T11:15:10.887Z",
+                    "updated_date": "2026-06-04T11:15:10.887Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "supportinginfosequenceno": "61562774",
+                    "itemsequenceno": "61562778",
+                    "created_date": "2026-06-04T11:15:10.887Z",
+                    "updated_date": "2026-06-04T11:15:10.887Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "supportinginfosequenceno": "61562775",
+                    "itemsequenceno": "61562778",
+                    "created_date": "2026-06-04T11:15:10.887Z",
+                    "updated_date": "2026-06-04T11:15:10.887Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "supportinginfosequenceno": "61562776",
+                    "itemsequenceno": "61562778",
+                    "created_date": "2026-06-04T11:15:10.887Z",
+                    "updated_date": "2026-06-04T11:15:10.887Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "supportinginfosequenceno": "61562777",
+                    "itemsequenceno": "61562778",
+                    "created_date": "2026-06-04T11:15:10.887Z",
+                    "updated_date": "2026-06-04T11:15:10.887Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "supportinginfosequenceno": "61562779",
+                    "itemsequenceno": "61562778",
+                    "created_date": "2026-06-04T11:15:10.887Z",
+                    "updated_date": "2026-06-04T11:15:10.887Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "supportinginfosequenceno": "61562780",
+                    "itemsequenceno": "61562778",
+                    "created_date": "2026-06-04T11:15:10.887Z",
+                    "updated_date": "2026-06-04T11:15:10.887Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "supportinginfosequenceno": "61562781",
+                    "itemsequenceno": "61562778",
+                    "created_date": "2026-06-04T11:15:10.887Z",
+                    "updated_date": "2026-06-04T11:15:10.887Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "supportinginfosequenceno": "61562783",
+                    "itemsequenceno": "61562778",
+                    "created_date": "2026-06-04T11:15:10.887Z",
+                    "updated_date": "2026-06-04T11:15:10.887Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "supportinginfosequenceno": "61562784",
+                    "itemsequenceno": "61562778",
+                    "created_date": "2026-06-04T11:15:10.887Z",
+                    "updated_date": "2026-06-04T11:15:10.887Z"
+                },
+                {
+                    "provclaimno": "CLM5640026002",
+                    "supportinginfosequenceno": "61562785",
+                    "itemsequenceno": "61562778",
+                    "created_date": "2026-06-04T11:15:10.887Z",
+                    "updated_date": "2026-06-04T11:15:10.887Z"
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_itemsupportinginfo"
+        },
+        {
+            "query": "SELECT DISTINCT\n    pd.provclaimno,\n    pd.start_date,\n    pd.created_date,\n    pd.updated_date\nFROM\n    nphies_pregnancy_details pd\n    INNER JOIN nphies_events e ON e.provclaimno = pd.provclaimno\n    AND e.issubmitted = 0\nORDER BY\n    pd.provclaimno",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_pregnancy_details"
+        },
+        {
+            "query": "SELECT DISTINCT\n    ce.provclaimno,\n    eh.encounterhospitalizationid,\n    eh.hospitaladmissionspeciality,\n    eh.hospitaldischargespeciality,\n    eh.hospitalintendedlengthofstay,\n    eh.hospitalizationorigin,\n    eh.hospitaladmissionsource,\n    eh.hospitalreadmission,\n    eh.hospitaldischargedisposition,\n    eh.encounterid,\n    eh.created_date,\n    eh.updated_date\nFROM nphiesencounterhospitalization eh\nINNER JOIN nphies_claimencounters ce\n    ON ce.encounterid = eh.encounterid\nINNER JOIN nphies_events e\n    ON e.provclaimno = ce.provclaimno\n   AND e.issubmitted = 0\nORDER BY eh.encounterid, eh.encounterhospitalizationid",
+            "result": [],
+            "version": null,
+            "tableName": "nphiesencounterhospitalization"
+        }
+    ],
+    "agentVersion": "1.0.0",
+    "providerType": "DEFAULT",
+    "agentSubmissionId": "sub-1782731377512",
+    "providerQueryResult": {
+        "nphiesProviderId": "15000000112233",
+        "nphiesOrganizationName": "Testing Client"
+    }
+}

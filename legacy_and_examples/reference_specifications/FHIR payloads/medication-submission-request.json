@@ -1,0 +1,209 @@
+{
+    "eventId": "1235",
+    "eventType": "MEDICATION_REQUEST",
+    "uhrRequest": {
+        "id": 1,
+        "midtableId": 1,
+        "source": "123",
+        "createdDate": "2025-11-05",
+        "visitNumber": "202510300001",
+        "provider": {
+            "providerID": "15000000112233",
+            "providerName": "International University Hospital",
+            "nphiesOrganizationName": "International University Hospital",
+            "nphiesOrganizationID": "2.16.840.1.113883.3.3731.5.1",
+            "contactInfo": {
+                "phoneNumber": "+966112345678",
+                "email": "info@nhicclinic.sa",
+                "address": {
+                    "street": "3920 Mathar Alshibani St",
+                    "city": "Riyadh",
+                    "postalCode": "12211",
+                    "country": "Saudi Arabia"
+                }
+            }
+        },
+        "caseInfo": {
+            "visitType": "INPATIENT",
+            "patientLocation": {
+                "room": "101",
+                "bed": "A",
+                "pointOfCare": "MED-UNIT-1",
+                "facilityId": "2.16.840.1.113883.3.3731.1.2.2"
+            },
+            "admissionMethod": "OTHER",
+            "visitNumber": "202510300001",
+            "admitDate": "2025-10-30",
+            "dischargeDate": "",
+            "lengthOfStay": 3,
+            "chiefComplaints": "Chest pain and shortness of breath",
+            "department": null,
+            "observations": {
+                "height": {
+                    "unit": "CENTIMETER",
+                    "value": 175
+                },
+                "weight": {
+                    "unit": "KILOGRAM",
+                    "value": 70
+                },
+                "fasting": "FASTING",
+                "medicalHistory": "Chronic pain before 2 years ago"
+            }
+        },
+        "patient": {
+            "id": 2267,
+            "healthId": "30000999999999",
+            "age": 40,
+            "gender": "MALE",
+            "dateOfBirth": "1985-01-15",
+            "nationality": "SAU",
+            "contactInfo": {
+                "fullName": "Mohammed Al-Ghamdi",
+                "firstName": "Mohammed",
+                "lastName": "Al-Ghamdi",
+                "phoneNumber": "+966501234567",
+                "address": {
+                    "street": "2448 Zarga Alyamamah St",
+                    "city": "Riyadh",
+                    "postalCode": "13337",
+                    "country": "Saudi Arabia"
+                }
+            },
+            "maritalStatus": "MARRIED",
+            "guardianContactInfo": {
+                "name": "Mohammed Al-Ghamdi",
+                "phoneNumber": "+966501234567",
+                "address": {
+                    "street": "Al Olaya St",
+                    "city": "Riyadh",
+                    "postalCode": "13337",
+                    "country": "Saudi Arabia"
+                }
+            }
+        },
+        "careTeam": [
+            {
+                "id": "102344",
+                "nationalId": "00TEST1984",
+                "contactInfo": {
+                    "fullName": "Abdullah Al-Harbi",
+                    "firstName": "Abdullah",
+                    "lastName": "Al-Harbi",
+                    "phoneNumber": "+966509876543",
+                    "email": "abdullah.alharbi@nhicclinic.sa",
+                    "address": {
+                        "street": "3920 Mathar Alshibani St",
+                        "city": "Riyadh",
+                        "postalCode": "12629",
+                        "country": "Saudi Arabia"
+                    }
+                },
+                "type": "doctor",
+                "role": "100000003",
+                "speciality": "CE9D7C6B-62F9-E811-B80F-005056AD2FD8",
+                "notes": "Attending physician for cardiac observation case"
+            }
+        ],
+        "diagnosis": [
+            {
+                "id": 2,
+                "code": "ACTIVE_PROBLEMS",
+                "priority": "PRINCIPAL",
+                "info": [
+                    {
+                        "diagnosisProcedureCode": "A25.0",
+                        "description": "Effusion of joint, lower leg",
+                        "dateFrom": "2025-12-10",
+                        "status": "COMPLETED"
+                    }
+                ]
+            }
+        ],
+        "services": [
+            {
+                "id": 3,
+                "code": "new",
+                "date": "2023-01-15",
+                "isLab": false,
+                "priorty": "ASAP",
+                "isFasting": true
+            },
+            {
+                "id": 4,
+                "code": "XCHES",
+                "date": "",
+                "isLab": false,
+                "priorty": "ASAP",
+                "isFasting": true,
+                "serviceInfo": {
+                    "radiologyProcedures": [
+                        {
+                            "procedure": "XCHES",
+                            "procedureDescription": "XR Chest",
+                            "modality": "RADIOGRAPHIC_IMAGING",
+                            "modalityDescription": "Radiographic imaging",
+                            "bodySite": "BREAST_STRUCTURE",
+                            "bodySiteDescription": "breast structure"
+                        }
+                    ]
+                }
+            }
+        ],
+        "medication": [
+            {
+                "id": 4,
+                "medicine": {
+                    "code": "010203-0101-5406-02-11",
+                    "displayName": "otozol clotrimazole '1 % solution/ drops"
+                },
+                "packaging": {
+                    "code": "27",
+                    "displayName": "bottle, spray"
+                },
+                "dosage": {
+                    "form": {
+                        "code": "0601",
+                        "displayName": "gel"
+                    },
+                    "prescriptionValidityPeriod": {
+                        "start": "2025-11-05",
+                        "end": "2025-12-05"
+                    },
+                    "quantity": {
+                        "unit": "MILLIGRAM",
+                        "value": "30"
+                    },
+                    "duration": {
+                        "unit": "DAY",
+                        "value": "30"
+                    },
+                    "dosagePeriod": {
+                        "start": "2025-11-13",
+                        "end": "2025-12-12"
+                    },
+                    "instruction": "Take medicine before lunch and dinner",
+                    "route": "26643006",
+					"doseAndRate": {
+                        "unit": "MILLIGRAM",
+                        "value": "30"
+                    }
+                },
+                "prescriptionType": "CONTROLLED",
+                "notes": "Take 5mg medicine direct.",
+				"dosageTiming": {
+                    "code": "422114001",
+                    "displayName": "Once"
+                }
+            }
+        ],
+        "allergy": [
+            {
+                "code": 442441000124101,
+                "severity": "MODERATE",
+                "type": "FOOD_ALLERGY",
+                "notes": "food, clinical finding"
+            }
+        ]
+    }
+}

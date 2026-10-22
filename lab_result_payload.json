@@ -1,0 +1,1144 @@
+
+{
+    "time": "2026-08-05T17:04:31.659Z",
+    "results": [
+        {
+            "query": "SELECT DISTINCT\n    c.provclaimno,\n    b.beneficiaryid,\n    b.patientfileno,\n    b.firstname,\n    b.middlename,\n    b.lastname,\n    b.fullname,\n    b.dob,\n    b.gender,\n    b.nationality,\n    b.documenttype,\n    b.documentid,\n    b.contactnumber,\n    b.ehealthid,\n    b.residencytype,\n    b.maritalstatus,\n    b.bloodgroup,\n    b.preferredlanguage,\n    b.email,\n    b.addressline,\n    b.addressstreetname,\n    b.addresscity,\n    b.addressdistrict,\n    b.addressstate,\n    b.addresspostalcode,\n    b.addresscountry,\n    b.occupation,\n    b.religion,\n    b.prior_patient_id,\n    b.created_date,\n    b.updated_date\nFROM\n    nphies_beneficiary b\n    INNER JOIN nphies_claiminfo c ON c.beneficiaryid = b.beneficiaryid\n    INNER JOIN nphies_events e ON e.provclaimno = c.provclaimno\n    AND e.issubmitted = 0\nORDER BY\n    b.beneficiaryid",
+            "result": [
+                {
+                    "dob": "1962-11-28T00:00:00.000Z",
+                    "email": "",
+                    "gender": "Female",
+                    "fullname": "MARYAM ABDULLATIF MOHAMMED ALMAGHRABI",
+                    "lastname": "ALMAGHRABI",
+                    "religion": "UNK",
+                    "ehealthid": "30511223344557",
+                    "firstname": "MARYAM",
+                    "bloodgroup": "0",
+                    "documentid": "1016030643",
+                    "middlename": "ABDULLATIF MOHAMMED",
+                    "occupation": "Unknown",
+                    "addresscity": "",
+                    "addressline": "",
+                    "nationality": "SAU",
+                    "provclaimno": "CLMLR5645026844",
+                    "addressstate": "",
+                    "created_date": "2026-03-10T03:27:59.583Z",
+                    "documenttype": "Bataqa",
+                    "updated_date": "2026-08-05T19:48:12.641Z",
+                    "beneficiaryid": "5638145096",
+                    "contactnumber": "0544447492",
+                    "maritalstatus": "NONE",
+                    "patientfileno": "NC06-008615",
+                    "residencytype": "",
+                    "addresscountry": "",
+                    "addressdistrict": "",
+                    "prior_patient_id": "",
+                    "addresspostalcode": "",
+                    "addressstreetname": "",
+                    "preferredlanguage": "en-us"
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_beneficiary"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cad.provclaimno,\n    cad.accidenttype,\n    cad.accidentdate,\n    cad.addressstreetname,\n    cad.addresscity,\n    cad.addressstate,\n    cad.addresscountry,\n    cad.created_date,\n    cad.updated_date\nFROM nphies_claimaccidentdetail cad\nINNER JOIN nphies_events e\n    ON e.provclaimno = cad.provclaimno\n   AND e.issubmitted = 0\nORDER BY cad.provclaimno",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_claimaccidentdetail"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cct.provclaimno,\n    cct.sequenceno,\n    cct.physicianid,\n    cct.physicianname,\n    cct.practitionerrole,\n    cct.careteamrole,\n    cct.careteamqualification,\n    cct.created_date,\n    cct.updated_date\nFROM nphies_claimcareteam cct\nINNER JOIN nphies_events e\n    ON e.provclaimno = cct.provclaimno\n   AND e.issubmitted = 0\nORDER BY cct.provclaimno, cct.sequenceno",
+            "result": [
+                {
+                    "sequenceno": "148366",
+                    "physicianid": "00TEST1980",
+                    "provclaimno": "CLMLR5645026844",
+                    "careteamrole": "",
+                    "created_date": "2026-08-04T19:29:56.367Z",
+                    "updated_date": "2026-08-04T19:29:56.367Z",
+                    "physicianname": "Test Doctor - test",
+                    "practitionerrole": "Doctor",
+                    "careteamqualification": "MD"
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_claimcareteam"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cd.provclaimno,\n    cd.sequenceno,\n    cd.diagnosiscode,\n    cd.diagnosisdesc,\n    cd.diagnosistype,\n    cd.onadmission,\n    cd.conditiononset,\n    cd.created_date,\n    cd.updated_date\nFROM nphies_claimdiagnosis cd\nINNER JOIN nphies_events e\n    ON e.provclaimno = cd.provclaimno\n   AND e.issubmitted = 0\nORDER BY cd.provclaimno, cd.sequenceno",
+            "result": [
+                {
+                    "sequenceno": "1",
+                    "onadmission": "",
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:29:55.853Z",
+                    "updated_date": "2026-08-04T19:29:55.853Z",
+                    "diagnosiscode": "K10.3",
+                    "diagnosisdesc": "Alveolitis of jaws",
+                    "diagnosistype": "PRINCIPAL",
+                    "conditiononset": ""
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_claimdiagnosis"
+        },
+        {
+            "query": "SELECT DISTINCT\n    ce.provclaimno,\n    ce.encounterid,\n    ce.encounterstartdate,\n    ce.encounterenddate,\n    ce.encounterclass,\n    ce.encounterservicetype,\n    ce.priority,\n    ce.serviceprovider,\n    ce.encounterstatus,\n    ce.causeofdeath,\n    ce.serviceeventtype,\n    ce.room,\n    ce.bed,\n    ce.point_of_care,\n    ce.facility_id,\n    ce.created_date,\n    ce.updated_date\nFROM\n    nphies_claimencounters ce\n    INNER JOIN nphies_events e ON e.provclaimno = ce.provclaimno\n    AND e.issubmitted = 0\nORDER BY\n    ce.provclaimno,\n    ce.encounterid\n\n    ",
+            "result": [
+                {
+                    "bed": "",
+                    "room": "",
+                    "priority": "",
+                    "encounterid": "CLMLR5645026844",
+                    "facility_id": "",
+                    "provclaimno": "CLMLR5645026844",
+                    "causeofdeath": "",
+                    "created_date": "2026-08-04T19:30:02.410Z",
+                    "updated_date": "2026-08-04T19:30:02.410Z",
+                    "point_of_care": "",
+                    "encounterclass": "OUTPATIENT",
+                    "encounterstatus": "",
+                    "serviceprovider": null,
+                    "encounterenddate": "2026-08-04T00:00:00.000Z",
+                    "serviceeventtype": "",
+                    "encounterstartdate": "2026-08-04T00:00:00.000Z",
+                    "encounterservicetype": "Other"
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_claimencounters"
+        },
+        {
+            "query": "SELECT DISTINCT\n    c.provclaimno,\n    c.episodeid,\n    c.isnewborn,\n    c.isreferral,\n    c.referringprovidername,\n    c.claimtype,\n    c.claimsubtype,\n    c.providernphiesid,\n    c.claimcreateddate,\n    c.accountingperiod,\n    c.billableperiodstart,\n    c.billableperiodend,\n    c.coverageid,\n    c.beneficiaryid,\n    c.subscriberid,\n    c.total,\n    c.prescription,\n    c.providernphiesname,\n    c.prior_visit_number,\n    c.created_date,\n    c.updated_date\nFROM\n    nphies_claiminfo c\n    INNER JOIN nphies_events e ON e.provclaimno = c.provclaimno\n    AND e.issubmitted = 0\nORDER BY\n    c.updated_date DESC,\n    c.created_date DESC",
+            "result": [
+                {
+                    "total": "2999.52",
+                    "claimtype": "ML1.6",
+                    "episodeid": "",
+                    "isnewborn": "",
+                    "coverageid": null,
+                    "isreferral": "",
+                    "provclaimno": "CLMLR5645026844",
+                    "claimsubtype": "Out Patient",
+                    "created_date": "2026-08-04T19:29:40.083Z",
+                    "prescription": "",
+                    "subscriberid": "5638145096",
+                    "updated_date": "2026-08-04T19:29:40.083Z",
+                    "beneficiaryid": "5638145096",
+                    "accountingperiod": "2026-08-04T00:00:00.000Z",
+                    "claimcreateddate": "2026-08-04T00:00:00.000Z",
+                    "providernphiesid": "15000000112233",
+                    "billableperiodend": "1900-01-01T00:00:00.000Z",
+                    "prior_visit_number": "",
+                    "providernphiesname": "Testing Client",
+                    "billableperiodstart": "1900-01-01T00:00:00.000Z",
+                    "referringprovidername": ""
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_claiminfo"
+        },
+        {
+            "query": "SELECT DISTINCT\n    ci.provclaimno,\n    ci.invoiceno,\n    ci.sequenceno,\n    ci.servicetype,\n    ci.servicecode,\n    ci.servicedesc,\n    ci.ispackage,\n    ci.quantity,\n    ci.quantitycode,\n    ci.unitprice,\n    ci.discount,\n    ci.factor,\n    ci.patientshare,\n    ci.payershare,\n    ci.tax,\n    ci.net,\n    ci.startdate,\n    ci.enddate,\n    ci.created_date,\n    ci.updated_date\nFROM nphies_claimitem ci\nINNER JOIN nphies_events e\n    ON e.provclaimno = ci.provclaimno\n   AND e.issubmitted = 0\nORDER BY ci.provclaimno, ci.sequenceno",
+            "result": [
+                {
+                    "net": "144.9",
+                    "tax": "0",
+                    "factor": "1",
+                    "enddate": "1900-01-01T00:00:00.000Z",
+                    "discount": "0",
+                    "quantity": "1",
+                    "invoiceno": "",
+                    "ispackage": "False",
+                    "startdate": "1900-01-01T00:00:00.000Z",
+                    "unitprice": "144.9",
+                    "payershare": "144.9",
+                    "sequenceno": "61563364",
+                    "provclaimno": "CLMLR5645026844",
+                    "servicecode": "85025-SY0",
+                    "servicedesc": "YANBU - CBC - SPA",
+                    "servicetype": "laboratory",
+                    "created_date": "2026-08-04T19:29:57.860Z",
+                    "patientshare": "144.9",
+                    "quantitycode": "",
+                    "updated_date": "2026-08-04T19:29:57.860Z"
+                },
+                {
+                    "net": "11.97",
+                    "tax": "0",
+                    "factor": "1",
+                    "enddate": "1900-01-01T00:00:00.000Z",
+                    "discount": "0",
+                    "quantity": "1",
+                    "invoiceno": "",
+                    "ispackage": "False",
+                    "startdate": "1900-01-01T00:00:00.000Z",
+                    "unitprice": "11.97",
+                    "payershare": "11.97",
+                    "sequenceno": "61563366",
+                    "provclaimno": "CLMLR5645026844",
+                    "servicecode": "LA01010076",
+                    "servicedesc": "LAB TEST CBC SYSMEX XNL-550",
+                    "servicetype": "laboratory",
+                    "created_date": "2026-08-05T20:01:01.203Z",
+                    "patientshare": "11.97",
+                    "quantitycode": "",
+                    "updated_date": "2026-08-05T20:01:01.203Z"
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_claimitem"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cd.provclaimno,\n    cd.item_sequenceno,\n    cd.form_code,\n    cd.form_display_name,\n    cd.duration_unit,\n    cd.duration_value,\n    cd.period_start,\n    cd.period_end,\n    cd.instruction,\n    cd.route,\n    cd.as_needed,\n    cd.created_date,\n    cd.updated_date\nFROM\n    nphies_claimitem_dosage cd\n    INNER JOIN nphies_events e ON e.provclaimno = cd.provclaimno\n    AND e.issubmitted = 0\nORDER BY\n    cd.provclaimno,\n    cd.item_sequenceno",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_claimitem_dosage"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cm.provclaimno,\n    cm.item_sequenceno,\n    cm.medicine_code,\n    cm.medicine_display_name,\n    cm.ingredient,\n    cm.strength_value,\n    cm.strength_unit,\n    cm.day_supply,\n    cm.refills,\n    cm.receiver_healthid,\n    cm.category,\n    cm.reasonformedicine,\n    cm.handover_date_time,\n    cm.packaging_code,\n    cm.packaging_display_name,\n    cm.dispense_type,\n    cm.created_date,\n    cm.updated_date\nFROM\n    nphies_claimitem_medication cm\n    INNER JOIN nphies_events e ON e.provclaimno = cm.provclaimno\n    AND e.issubmitted = 0\nORDER BY\n    cm.provclaimno,\n    cm.item_sequenceno",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_claimitem_medication"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cp.provclaimno,\n    cp.item_sequenceno,\n    cp.procedure_code,\n    cp.procedure_description,\n    cp.modality_code,\n    cp.modality_description,\n    cp.bodysite_code,\n    cp.bodysite_description,\n    cp.order_identifier,\n    cp.created_date,\n    cp.updated_date\nFROM\n    nphies_claimitem_procedure cp\n    INNER JOIN nphies_events e ON e.provclaimno = cp.provclaimno\n    AND e.issubmitted = 0\nORDER BY\n    cp.provclaimno,\n    cp.item_sequenceno",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_claimitem_procedure"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cid.itemsequenceno,\n    cid.provclaimno,\n    cid.sequenceno,\n    cid.servicetype,\n    cid.servicecode,\n    cid.servicedesc,\n    cid.quantity,\n    cid.quantitycode,\n    cid.unitprice,\n    cid.tax,\n    cid.net,\n    cid.prescribeddrugcode,\n    cid.created_date,\n    cid.updated_date\nFROM nphies_claimitemdetails cid\nINNER JOIN nphies_events e\n    ON e.provclaimno = cid.provclaimno\n   AND e.issubmitted = 0\nORDER BY cid.provclaimno, cid.sequenceno",
+            "result": [
+                {
+                    "net": "11.97",
+                    "tax": "0",
+                    "quantity": "1",
+                    "unitprice": "11.97",
+                    "sequenceno": "37170076",
+                    "provclaimno": "CLMLR5645026844",
+                    "servicecode": "LA01010076",
+                    "servicedesc": "LAB TEST CBC SYSMEX XNL-550",
+                    "servicetype": "laboratory",
+                    "created_date": "2026-08-05T20:01:02.820Z",
+                    "quantitycode": "",
+                    "updated_date": "2026-08-05T20:01:02.820Z",
+                    "itemsequenceno": "61563366",
+                    "prescribeddrugcode": ""
+                },
+                {
+                    "net": "144.9",
+                    "tax": "0",
+                    "quantity": "1",
+                    "unitprice": "144.9",
+                    "sequenceno": "37670327",
+                    "provclaimno": "CLMLR5645026844",
+                    "servicecode": "85025-SY0",
+                    "servicedesc": "YANBU - CBC - SPA",
+                    "servicetype": "laboratory",
+                    "created_date": "2026-08-04T19:29:59.617Z",
+                    "quantitycode": "",
+                    "updated_date": "2026-08-04T19:29:59.617Z",
+                    "itemsequenceno": "61563364",
+                    "prescribeddrugcode": ""
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_claimitemdetails"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cpd.provclaimno,\n    cpd.preauthrefno,\n    cpd.created_date,\n    cpd.updated_date\nFROM nphies_claimpreauthdetails cpd\nINNER JOIN nphies_events e\n    ON e.provclaimno = cpd.provclaimno\n   AND e.issubmitted = 0\nORDER BY cpd.provclaimno",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_claimpreauthdetails"
+        },
+        {
+            "query": "SELECT DISTINCT\n    csi.provclaimno,\n    csi.sequenceno,\n    csi.category,\n    csi.reason,\n    csi.supportingvalue,\n    csi.attachmentfilename,\n    csi.attachmenttype,\n    csi.code,\n    csi.unit,\n    csi.timingperiodfrom,\n    csi.timingperiodto,\n    csi.created_date,\n    csi.updated_date\nFROM nphies_claimsupportinginfo csi\nINNER JOIN nphies_events e\n    ON e.provclaimno = csi.provclaimno\n   AND e.issubmitted = 0\nORDER BY csi.provclaimno, csi.sequenceno",
+            "result": [
+                {
+                    "code": "",
+                    "unit": "",
+                    "reason": "LAB  Services",
+                    "category": "lab-specimen-type",
+                    "sequenceno": "61563385",
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:29:56.893Z",
+                    "updated_date": "2026-08-04T19:29:56.893Z",
+                    "attachmenttype": "",
+                    "timingperiodto": "2026-02-28T00:00:00.000Z",
+                    "supportingvalue": "BLD",
+                    "timingperiodfrom": "2026-01-01T00:00:00.000Z",
+                    "attachmentfilename": ""
+                },
+                {
+                    "code": "",
+                    "unit": "",
+                    "reason": "LAB  Services",
+                    "category": "lab-department",
+                    "sequenceno": "61563386",
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:29:56.893Z",
+                    "updated_date": "2026-08-04T19:29:56.893Z",
+                    "attachmenttype": "",
+                    "timingperiodto": "2026-02-28T00:00:00.000Z",
+                    "supportingvalue": "18723-7",
+                    "timingperiodfrom": "2026-01-01T00:00:00.000Z",
+                    "attachmentfilename": ""
+                },
+                {
+                    "code": "",
+                    "unit": "",
+                    "reason": "LAB  Services",
+                    "category": "lab-result-range",
+                    "sequenceno": "61563387",
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:29:56.893Z",
+                    "updated_date": "2026-08-04T19:29:56.893Z",
+                    "attachmenttype": "",
+                    "timingperiodto": "2026-02-28T00:00:00.000Z",
+                    "supportingvalue": "11.5;;g/dL;;15.5;;g/dL",
+                    "timingperiodfrom": "2026-01-01T00:00:00.000Z",
+                    "attachmentfilename": ""
+                },
+                {
+                    "code": "",
+                    "unit": "",
+                    "reason": "LAB Services",
+                    "category": "lab-department",
+                    "sequenceno": "61563388",
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:29:56.893Z",
+                    "updated_date": "2026-08-04T19:29:56.893Z",
+                    "attachmenttype": "",
+                    "timingperiodto": "2026-02-28T00:00:00.000Z",
+                    "supportingvalue": "18723-7",
+                    "timingperiodfrom": "2026-01-01T00:00:00.000Z",
+                    "attachmentfilename": ""
+                },
+                {
+                    "code": "",
+                    "unit": "",
+                    "reason": "LAB Services",
+                    "category": "lab-specimen-type",
+                    "sequenceno": "61563389",
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:29:56.893Z",
+                    "updated_date": "2026-08-04T19:29:56.893Z",
+                    "attachmenttype": "",
+                    "timingperiodto": "2026-02-28T00:00:00.000Z",
+                    "supportingvalue": "BLD",
+                    "timingperiodfrom": "2026-01-01T00:00:00.000Z",
+                    "attachmentfilename": ""
+                },
+                {
+                    "code": "",
+                    "unit": "",
+                    "reason": "LAB Services",
+                    "category": "lab-result-range",
+                    "sequenceno": "61563390",
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:29:56.893Z",
+                    "updated_date": "2026-08-04T19:29:56.893Z",
+                    "attachmenttype": "",
+                    "timingperiodto": "2026-02-28T00:00:00.000Z",
+                    "supportingvalue": "11.5;;g/dL;;15.5;;g/dL",
+                    "timingperiodfrom": "2026-01-01T00:00:00.000Z",
+                    "attachmentfilename": ""
+                },
+                {
+                    "code": "",
+                    "unit": "",
+                    "reason": "LAB Services",
+                    "category": "lab-result-interpretation",
+                    "sequenceno": "61563391",
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:29:56.893Z",
+                    "updated_date": "2026-08-04T19:29:56.893Z",
+                    "attachmenttype": "",
+                    "timingperiodto": "2026-02-28T00:00:00.000Z",
+                    "supportingvalue": "N",
+                    "timingperiodfrom": "2026-01-01T00:00:00.000Z",
+                    "attachmentfilename": ""
+                },
+                {
+                    "code": "",
+                    "unit": "",
+                    "reason": "LAB Services",
+                    "category": "lab-result-quantity",
+                    "sequenceno": "61563392",
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:29:56.893Z",
+                    "updated_date": "2026-08-04T19:29:56.893Z",
+                    "attachmenttype": "",
+                    "timingperiodto": "2026-02-28T00:00:00.000Z",
+                    "supportingvalue": ";;13.5;;g/dL",
+                    "timingperiodfrom": "2026-01-01T00:00:00.000Z",
+                    "attachmentfilename": ""
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_claimsupportinginfo"
+        },
+        {
+            "query": "SELECT DISTINCT\n    cvp.provclaimno,\n    cvp.visionprescriptionid,\n    cvp.datewritten,\n    cvp.careteamsequence,\n    cvp.product,\n    cvp.eye,\n    cvp.sphere,\n    cvp.cylinder,\n    cvp.axis,\n    cvp.prismamount,\n    cvp.prismbase,\n    cvp.lenspower,\n    cvp.lenscolor,\n    cvp.lensbrand,\n    cvp.created_date,\n    cvp.updated_date\nFROM nphies_claimvisionprescription cvp\nINNER JOIN nphies_events e\n    ON e.provclaimno = cvp.provclaimno\n   AND e.issubmitted = 0\nORDER BY cvp.provclaimno, cvp.visionprescriptionid",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_claimvisionprescription"
+        },
+        {
+            "query": "SELECT DISTINCT\n    c.provclaimno,\n    cov.coverageid,\n    cov.memberid,\n    cov.expirydate,\n    cov.payernphiesid,\n    cov.tpanphiesid,\n    cov.relationwithsubscriber,\n    cov.policyholder,\n    cov.policynumber,\n    cov.coveragetype,\n    cov.beneficiaryid,\n    cov.created_date,\n    cov.updated_date\nFROM nphies_coverage cov\nINNER JOIN nphies_claiminfo c\n    ON c.coverageid = cov.coverageid\nINNER JOIN nphies_events e\n    ON e.provclaimno = c.provclaimno\n   AND e.issubmitted = 0\nORDER BY cov.coverageid",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_coverage"
+        },
+        {
+            "query": "SELECT DISTINCT\n    c.provclaimno,\n    cc.coverageclassid,\n    cc.type,\n    cc.value,\n    cc.name,\n    cc.coverageid,\n    cc.created_date,\n    cc.updated_date\nFROM nphies_coverage_class cc\nINNER JOIN nphies_claiminfo c\n    ON c.coverageid = cc.coverageid\nINNER JOIN nphies_events e\n    ON e.provclaimno = c.provclaimno\n   AND e.issubmitted = 0\nORDER BY cc.coverageid, cc.coverageclassid",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_coverage_class"
+        },
+        {
+            "query": "SELECT DISTINCT\n    ce.provclaimno,\n    ee.encounteremergencyid,\n    ee.emergencyarrivalcode,\n    ee.emergencyservicestart,\n    ee.emergencydepartmentdisposition,\n    ee.triagecategory,\n    ee.triagedate,\n    ee.encounterid,\n    ee.created_date,\n    ee.updated_date\nFROM nphies_encounteremergency ee\nINNER JOIN nphies_claimencounters ce\n    ON ce.encounterid = ee.encounterid\nINNER JOIN nphies_events e\n    ON e.provclaimno = ce.provclaimno\n   AND e.issubmitted = 0\nORDER BY ee.encounterid, ee.encounteremergencyid",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_encounteremergency"
+        },
+        {
+            "query": "SELECT \n    e.eventid,\n    e.provclaimno,\n    e.eventtype,\n    e.createddate,\n    e.issubmitted,\n    e.created_date\nFROM nphies_events e\nWHERE e.issubmitted = 0\nORDER BY e.created_date DESC, e.eventid",
+            "result": [
+                {
+                    "eventid": "58",
+                    "eventtype": "LAB_RESULT",
+                    "createddate": "2026-08-04T19:29:58.190Z",
+                    "issubmitted": "false",
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:29:58.190Z"
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_events"
+        },
+        {
+            "query": "SELECT DISTINCT\n    ict.provclaimno,\n    ict.careteamsequenceno,\n    ict.itemsequenceno,\n    ict.created_date,\n    ict.updated_date\nFROM nphies_itemcareteam ict\nINNER JOIN nphies_events e\n    ON e.provclaimno = ict.provclaimno\n   AND e.issubmitted = 0\nORDER BY ict.provclaimno, ict.itemsequenceno",
+            "result": [
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.067Z",
+                    "updated_date": "2026-08-05T20:01:04.067Z",
+                    "itemsequenceno": "61563363",
+                    "careteamsequenceno": "148366"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:00.700Z",
+                    "updated_date": "2026-08-04T19:30:00.700Z",
+                    "itemsequenceno": "61563364",
+                    "careteamsequenceno": "148366"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.067Z",
+                    "updated_date": "2026-08-05T20:01:04.067Z",
+                    "itemsequenceno": "61563365",
+                    "careteamsequenceno": "148366"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.067Z",
+                    "updated_date": "2026-08-05T20:01:04.067Z",
+                    "itemsequenceno": "61563366",
+                    "careteamsequenceno": "148366"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.067Z",
+                    "updated_date": "2026-08-05T20:01:04.067Z",
+                    "itemsequenceno": "61563373",
+                    "careteamsequenceno": "148366"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.067Z",
+                    "updated_date": "2026-08-05T20:01:04.067Z",
+                    "itemsequenceno": "61563374",
+                    "careteamsequenceno": "148366"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:00.700Z",
+                    "updated_date": "2026-08-04T19:30:00.700Z",
+                    "itemsequenceno": "61563377",
+                    "careteamsequenceno": "148366"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:00.700Z",
+                    "updated_date": "2026-08-04T19:30:00.700Z",
+                    "itemsequenceno": "61563378",
+                    "careteamsequenceno": "148366"
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_itemcareteam"
+        },
+        {
+            "query": "SELECT DISTINCT\n    id.provclaimno,\n    id.diagnosissequenceno,\n    id.itemsequenceno,\n    id.created_date,\n    id.updated_date\nFROM nphies_itemdiagnosis id\nINNER JOIN nphies_events e\n    ON e.provclaimno = id.provclaimno\n   AND e.issubmitted = 0\nORDER BY id.provclaimno, id.itemsequenceno",
+            "result": [
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:03.597Z",
+                    "updated_date": "2026-08-05T20:01:03.597Z",
+                    "itemsequenceno": "61563363",
+                    "diagnosissequenceno": "1"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:00.233Z",
+                    "updated_date": "2026-08-04T19:30:00.233Z",
+                    "itemsequenceno": "61563364",
+                    "diagnosissequenceno": "1"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:03.597Z",
+                    "updated_date": "2026-08-05T20:01:03.597Z",
+                    "itemsequenceno": "61563365",
+                    "diagnosissequenceno": "1"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:03.597Z",
+                    "updated_date": "2026-08-05T20:01:03.597Z",
+                    "itemsequenceno": "61563366",
+                    "diagnosissequenceno": "1"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:03.597Z",
+                    "updated_date": "2026-08-05T20:01:03.597Z",
+                    "itemsequenceno": "61563373",
+                    "diagnosissequenceno": "1"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:03.597Z",
+                    "updated_date": "2026-08-05T20:01:03.597Z",
+                    "itemsequenceno": "61563374",
+                    "diagnosissequenceno": "1"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:00.233Z",
+                    "updated_date": "2026-08-04T19:30:00.233Z",
+                    "itemsequenceno": "61563377",
+                    "diagnosissequenceno": "1"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:00.233Z",
+                    "updated_date": "2026-08-04T19:30:00.233Z",
+                    "itemsequenceno": "61563378",
+                    "diagnosissequenceno": "1"
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_itemdiagnosis"
+        },
+        {
+            "query": "SELECT DISTINCT\n    isi.provclaimno,\n    isi.supportinginfosequenceno,\n    isi.itemsequenceno,\n    isi.created_date,\n    isi.updated_date\nFROM nphies_itemsupportinginfo isi\nINNER JOIN nphies_events e\n    ON e.provclaimno = isi.provclaimno\n   AND e.issubmitted = 0\nORDER BY isi.provclaimno, isi.itemsequenceno",
+            "result": [
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563363",
+                    "supportinginfosequenceno": "61563362"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563363",
+                    "supportinginfosequenceno": "61563363"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563363",
+                    "supportinginfosequenceno": "61563364"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563363",
+                    "supportinginfosequenceno": "61563365"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563363",
+                    "supportinginfosequenceno": "61563366"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563363",
+                    "supportinginfosequenceno": "61563373"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563363",
+                    "supportinginfosequenceno": "61563374"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563363",
+                    "supportinginfosequenceno": "61563377"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563363",
+                    "supportinginfosequenceno": "61563378"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563364",
+                    "supportinginfosequenceno": "61563362"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563364",
+                    "supportinginfosequenceno": "61563363"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563364",
+                    "supportinginfosequenceno": "61563385"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563364",
+                    "supportinginfosequenceno": "61563386"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563364",
+                    "supportinginfosequenceno": "61563387"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563364",
+                    "supportinginfosequenceno": "61563365"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563364",
+                    "supportinginfosequenceno": "61563366"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563364",
+                    "supportinginfosequenceno": "61563373"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563364",
+                    "supportinginfosequenceno": "61563374"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563364",
+                    "supportinginfosequenceno": "61563377"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563364",
+                    "supportinginfosequenceno": "61563378"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563365",
+                    "supportinginfosequenceno": "61563362"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563365",
+                    "supportinginfosequenceno": "61563363"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563365",
+                    "supportinginfosequenceno": "61563364"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563365",
+                    "supportinginfosequenceno": "61563365"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563365",
+                    "supportinginfosequenceno": "61563366"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563365",
+                    "supportinginfosequenceno": "61563373"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563365",
+                    "supportinginfosequenceno": "61563374"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563365",
+                    "supportinginfosequenceno": "61563377"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563365",
+                    "supportinginfosequenceno": "61563378"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563366",
+                    "supportinginfosequenceno": "61563362"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563366",
+                    "supportinginfosequenceno": "61563363"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563366",
+                    "supportinginfosequenceno": "61563364"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563366",
+                    "supportinginfosequenceno": "61563365"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563366",
+                    "supportinginfosequenceno": "61563366"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563366",
+                    "supportinginfosequenceno": "61563373"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563366",
+                    "supportinginfosequenceno": "61563374"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563366",
+                    "supportinginfosequenceno": "61563377"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563366",
+                    "supportinginfosequenceno": "61563378"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563373",
+                    "supportinginfosequenceno": "61563362"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563373",
+                    "supportinginfosequenceno": "61563363"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563373",
+                    "supportinginfosequenceno": "61563364"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563373",
+                    "supportinginfosequenceno": "61563365"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563373",
+                    "supportinginfosequenceno": "61563366"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563373",
+                    "supportinginfosequenceno": "61563373"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563373",
+                    "supportinginfosequenceno": "61563374"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563373",
+                    "supportinginfosequenceno": "61563377"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563373",
+                    "supportinginfosequenceno": "61563378"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563374",
+                    "supportinginfosequenceno": "61563362"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563374",
+                    "supportinginfosequenceno": "61563363"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563374",
+                    "supportinginfosequenceno": "61563364"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563374",
+                    "supportinginfosequenceno": "61563365"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563374",
+                    "supportinginfosequenceno": "61563366"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563374",
+                    "supportinginfosequenceno": "61563373"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563374",
+                    "supportinginfosequenceno": "61563374"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563374",
+                    "supportinginfosequenceno": "61563377"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-05T20:01:04.517Z",
+                    "updated_date": "2026-08-05T20:01:04.517Z",
+                    "itemsequenceno": "61563374",
+                    "supportinginfosequenceno": "61563378"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563377",
+                    "supportinginfosequenceno": "61563362"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563377",
+                    "supportinginfosequenceno": "61563363"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563377",
+                    "supportinginfosequenceno": "61563364"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563377",
+                    "supportinginfosequenceno": "61563365"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563377",
+                    "supportinginfosequenceno": "61563366"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563377",
+                    "supportinginfosequenceno": "61563373"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563377",
+                    "supportinginfosequenceno": "61563374"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563377",
+                    "supportinginfosequenceno": "61563377"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563377",
+                    "supportinginfosequenceno": "61563378"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563378",
+                    "supportinginfosequenceno": "61563362"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563378",
+                    "supportinginfosequenceno": "61563363"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563378",
+                    "supportinginfosequenceno": "61563364"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563378",
+                    "supportinginfosequenceno": "61563365"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563378",
+                    "supportinginfosequenceno": "61563366"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563378",
+                    "supportinginfosequenceno": "61563373"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563378",
+                    "supportinginfosequenceno": "61563374"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563378",
+                    "supportinginfosequenceno": "61563377"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563378",
+                    "supportinginfosequenceno": "61563378"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563366",
+                    "supportinginfosequenceno": "61563388"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563366",
+                    "supportinginfosequenceno": "61563389"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563366",
+                    "supportinginfosequenceno": "61563390"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563366",
+                    "supportinginfosequenceno": "61563391"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563366",
+                    "supportinginfosequenceno": "61563392"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563364",
+                    "supportinginfosequenceno": "61563391"
+                },
+                {
+                    "provclaimno": "CLMLR5645026844",
+                    "created_date": "2026-08-04T19:30:01.140Z",
+                    "updated_date": "2026-08-04T19:30:01.140Z",
+                    "itemsequenceno": "61563364",
+                    "supportinginfosequenceno": "61563392"
+                }
+            ],
+            "version": null,
+            "tableName": "nphies_itemsupportinginfo"
+        },
+        {
+            "query": "SELECT DISTINCT\n    pd.provclaimno,\n    pd.start_date,\n    pd.created_date,\n    pd.updated_date\nFROM\n    nphies_pregnancy_details pd\n    INNER JOIN nphies_events e ON e.provclaimno = pd.provclaimno\n    AND e.issubmitted = 0\nORDER BY\n    pd.provclaimno",
+            "result": [],
+            "version": null,
+            "tableName": "nphies_pregnancy_details"
+        },
+        {
+            "query": "SELECT DISTINCT\n    ce.provclaimno,\n    eh.encounterhospitalizationid,\n    eh.hospitaladmissionspeciality,\n    eh.hospitaldischargespeciality,\n    eh.hospitalintendedlengthofstay,\n    eh.hospitalizationorigin,\n    eh.hospitaladmissionsource,\n    eh.hospitalreadmission,\n    eh.hospitaldischargedisposition,\n    eh.encounterid,\n    eh.created_date,\n    eh.updated_date\nFROM nphiesencounterhospitalization eh\nINNER JOIN nphies_claimencounters ce\n    ON ce.encounterid = eh.encounterid\nINNER JOIN nphies_events e\n    ON e.provclaimno = ce.provclaimno\n   AND e.issubmitted = 0\nORDER BY eh.encounterid, eh.encounterhospitalizationid",
+            "result": [],
+            "version": null,
+            "tableName": "nphiesencounterhospitalization"
+        }
+    ],
+    "agentVersion": "1.0.0",
+    "providerType": "DEFAULT_PLUS",
+    "agentSubmissionId": "sub-1785949471659",
+    "providerQueryResult": {
+        "nphiesProviderId": "15000000112233",
+        "nphiesOrganizationName": "Testing Client"
+    },
+    "midtableSubmissionId": 7589
+}

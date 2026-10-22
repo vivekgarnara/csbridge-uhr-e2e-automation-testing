@@ -1,0 +1,51 @@
+# Claude memory
+.claude-memory
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Test data
+tests/specs/data/
+tests/data/
+data/
+
+# Node
+node_modules/
+dist/
+build/
+.npm/
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Allure
+allure-results/
+allure-report/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# Temp / scratch
+scratch/
+
+test_data/

@@ -1,0 +1,511 @@
+{
+  "time": "2026-06-29T11:09:37.512Z",
+  "results": [
+    {
+      "query": "SELECT DISTINCT c.provclaimno, b.beneficiaryid...",
+      "result": [
+        {
+          "dob": "1992-07-03T00:00:00.000Z",
+          "email": "abc@gmail.com",
+          "gender": "male",
+          "lastname": "Alsubaie",
+          "religion": "islam",
+          "ehealthid": "30511223344557",
+          "firstname": "Falah",
+          "bloodgroup": "O_PLUS",
+          "documentid": "1092092711",
+          "middlename": "Abduallah",
+          "occupation": "engineer",
+          "addresscity": "Riyadh",
+          "addressline": "123 King Fahad Rd",
+          "nationality": "SAU",
+          "provclaimno": "5645112233",
+          "addressstate": "Riyadh",
+          "created_date": "2026-03-10T03:27:59.583Z",
+          "documenttype": "NATIONAL_ID",
+          "updated_date": "2026-05-18T11:53:33.232Z",
+          "beneficiaryid": "5638114441",
+          "contactnumber": "0559697177",
+          "maritalstatus": "M",
+          "patientfileno": "NC06-002687",
+          "residencytype": "citizen",
+          "addresscountry": "SAU",
+          "addressdistrict": "Al-Murjan",
+          "prior_patient_id": "",
+          "addresspostalcode": "12271",
+          "addressstreetname": "King Fahad Rd",
+          "preferredlanguage": "ar"
+        }
+      ],
+      "version": null,
+      "tableName": "nphies_beneficiary"
+    },
+    {
+      "query": "SELECT DISTINCT cad.provclaimno...",
+      "result": [],
+      "version": null,
+      "tableName": "nphies_claimaccidentdetail"
+    },
+    {
+      "query": "SELECT DISTINCT cct.provclaimno...",
+      "result": [
+        {
+          "sequenceno": "148366",
+          "physicianid": "00TEST1982",
+          "provclaimno": "5645112233",
+          "careteamrole": "primary",
+          "created_date": "2026-06-04T11:15:04.310Z",
+          "updated_date": "2026-06-04T11:15:04.310Z",
+          "physicianname": "Test Doctor - test",
+          "practitionerrole": "ENDOCRINOLOGY_THYROID_CANCER",
+          "careteamqualification": "01.00"
+        }
+      ],
+      "version": null,
+      "tableName": "nphies_claimcareteam"
+    },
+    {
+      "query": "SELECT DISTINCT cd.provclaimno...",
+      "result": [
+        {
+          "sequenceno": "1",
+          "onadmission": "",
+          "provclaimno": "5645112233",
+          "created_date": "2026-06-04T11:15:03.843Z",
+          "updated_date": "2026-06-29T13:11:59.811Z",
+          "diagnosiscode": "D14.3",
+          "diagnosisdesc": "Benign neoplasm of bronchus and lung",
+          "diagnosistype": "PRINCIPAL",
+          "conditiononset": ""
+        },
+        {
+          "sequenceno": "2",
+          "onadmission": "",
+          "provclaimno": "5645112233",
+          "created_date": "2026-06-04T11:15:03.843Z",
+          "updated_date": "2026-06-29T13:11:59.811Z",
+          "diagnosiscode": "E11.9",
+          "diagnosisdesc": "Type 2 diabetes mellitus without complications",
+          "diagnosistype": "SECONDARY",
+          "conditiononset": ""
+        }
+      ],
+      "version": null,
+      "tableName": "nphies_claimdiagnosis"
+    },
+    {
+      "query": "SELECT DISTINCT ce.provclaimno...",
+      "result": [
+        {
+          "bed": "",
+          "room": "",
+          "priority": "routine",
+          "encounterid": "5645112233",
+          "facility_id": "",
+          "provclaimno": "5645112233",
+          "causeofdeath": "",
+          "created_date": "2026-06-04T11:15:11.683Z",
+          "updated_date": "2026-06-04T11:15:11.683Z",
+          "point_of_care": "",
+          "encounterclass": "AMB",
+          "encounterstatus": "finished",
+          "serviceprovider": null,
+          "encounterenddate": "2026-06-04T00:00:00.000Z",
+          "serviceeventtype": "",
+          "encounterstartdate": "2026-06-04T00:00:00.000Z",
+          "encounterservicetype": "1"
+        }
+      ],
+      "version": null,
+      "tableName": "nphies_claimencounters"
+    },
+    {
+      "query": "SELECT DISTINCT c.provclaimno...",
+      "result": [
+        {
+          "total": "14800",
+          "claimtype": "radiology",
+          "episodeid": "",
+          "isnewborn": "N",
+          "coverageid": null,
+          "isreferral": "N",
+          "provclaimno": "5645112233",
+          "claimsubtype": "outpatient",
+          "created_date": "2026-06-04T11:14:57.093Z",
+          "prescription": "",
+          "subscriberid": "5638114441",
+          "updated_date": "2026-06-04T11:14:57.093Z",
+          "beneficiaryid": "5638114441",
+          "accountingperiod": "2026-06-04T00:00:00.000Z",
+          "claimcreateddate": "2026-06-04T00:00:00.000Z",
+          "providernphiesid": "11000000002333",
+          "billableperiodend": "2026-06-04T00:00:00.000Z",
+          "prior_visit_number": "",
+          "providernphiesname": "",
+          "billableperiodstart": "2026-06-04T00:00:00.000Z",
+          "referringprovidername": ""
+        }
+      ],
+      "version": null,
+      "tableName": "nphies_claiminfo"
+    },
+    {
+      "query": "SELECT DISTINCT ci.provclaimno...",
+      "result": [
+        {
+          "net": "1200",
+          "tax": "0",
+          "factor": "1",
+          "enddate": "1900-01-01T00:00:00.000Z",
+          "discount": "0",
+          "quantity": "1",
+          "invoiceno": "",
+          "ispackage": "False",
+          "startdate": "2026-06-04T10:00:00.000Z",
+          "unitprice": "1200",
+          "payershare": "1200",
+          "sequenceno": "61562777",
+          "provclaimno": "5645112233",
+          "servicecode": "91200-000",
+          "servicedesc": "Elastography Ultrasound",
+          "servicetype": "RADIOLOGY-ORDER",
+          "bodysitecode": "ABDOMEN",
+          "order_identifier": "ORD-12345",
+          "accessionnumber": "ACC-12345",
+          "created_date": "2026-06-04T11:15:08.350Z",
+          "patientshare": "1200",
+          "quantitycode": "",
+          "updated_date": "2026-06-04T11:15:08.350Z"
+        },
+        {
+          "net": "300",
+          "tax": "0",
+          "factor": "1",
+          "enddate": "1900-01-01T00:00:00.000Z",
+          "discount": "0",
+          "quantity": "1",
+          "invoiceno": "",
+          "ispackage": "False",
+          "startdate": "2026-06-04T10:30:00.000Z",
+          "unitprice": "300",
+          "payershare": "300",
+          "sequenceno": "61562778",
+          "provclaimno": "5645112233",
+          "servicecode": "76536-201",
+          "servicedesc": "Bedside Ultrasound",
+          "servicetype": "RADIOLOGY-ORDER",
+          "bodysitecode": "CHEST",
+          "order_identifier": "ORD-12346",
+          "accessionnumber": "ACC-12346",
+          "created_date": "2026-06-04T11:15:08.350Z",
+          "patientshare": "300",
+          "quantitycode": "",
+          "updated_date": "2026-06-04T11:15:08.350Z"
+        }
+      ],
+      "version": null,
+      "tableName": "nphies_claimitem"
+    },
+    {
+      "query": "SELECT DISTINCT cd.provclaimno...",
+      "result": [],
+      "version": null,
+      "tableName": "nphies_claimitem_dosage"
+    },
+    {
+      "query": "SELECT DISTINCT cm.provclaimno...",
+      "result": [],
+      "version": null,
+      "tableName": "nphies_claimitem_medication"
+    },
+    {
+      "query": "SELECT DISTINCT cp.provclaimno...",
+      "result": [],
+      "version": null,
+      "tableName": "nphies_claimitem_procedure"
+    },
+    {
+      "query": "SELECT DISTINCT cid.itemsequenceno...",
+      "result": [
+        {
+          "net": "1200",
+          "tax": "0",
+          "quantity": "1",
+          "unitprice": "1200",
+          "sequenceno": "37656942",
+          "provclaimno": "5645112233",
+          "servicecode": "91200-000",
+          "servicedesc": "Elastography Ultrasound",
+          "servicetype": "RADIOLOGY-ORDER",
+          "created_date": "2026-06-04T11:15:09.573Z",
+          "quantitycode": "",
+          "updated_date": "2026-06-04T11:15:09.573Z",
+          "itemsequenceno": "61562777",
+          "prescribeddrugcode": ""
+        },
+        {
+          "net": "300",
+          "tax": "0",
+          "quantity": "1",
+          "unitprice": "300",
+          "sequenceno": "42457161",
+          "provclaimno": "5645112233",
+          "servicecode": "76536-201",
+          "servicedesc": "Bedside Ultrasound",
+          "servicetype": "RADIOLOGY-ORDER",
+          "created_date": "2026-06-04T11:15:09.573Z",
+          "quantitycode": "",
+          "updated_date": "2026-06-04T11:15:09.573Z",
+          "itemsequenceno": "61562778",
+          "prescribeddrugcode": ""
+        }
+      ],
+      "version": null,
+      "tableName": "nphies_claimitemdetails"
+    },
+    {
+      "query": "SELECT DISTINCT cpd.provclaimno...",
+      "result": [],
+      "version": null,
+      "tableName": "nphies_claimpreauthdetails"
+    },
+    {
+      "query": "SELECT DISTINCT csi.provclaimno...",
+      "result": [
+        {
+          "code": "",
+          "unit": "",
+          "reason": "",
+          "category": "chief-complaint",
+          "sequenceno": "45026632",
+          "provclaimno": "5645112233",
+          "created_date": "2026-06-04T11:15:06.780Z",
+          "updated_date": "2026-06-29T14:06:54.577Z",
+          "attachmenttype": "",
+          "timingperiodto": "2026-07-04T10:00:00.000Z",
+          "supportingvalue": "Patient complains of severe abdominal pain.",
+          "timingperiodfrom": "2026-06-04T10:00:00.000Z",
+          "attachmentfilename": ""
+        },
+        {
+          "provclaimno": "5645112233",
+          "sequenceno": "61562784",
+          "category": "vital-sign-height",
+          "reason": "",
+          "supportingvalue": "819",
+          "attachmentfilename": "",
+          "attachmenttype": "",
+          "code": "",
+          "unit": "cm",
+          "timingperiodfrom": "",
+          "timingperiodto": "",
+          "created_date": "2026-06-04T11:15:06.780Z",
+          "updated_date": "2026-06-04T11:15:06.780Z"
+        },
+        {
+          "provclaimno": "5645112233",
+          "sequenceno": "61562785",
+          "category": "vital-sign-weight",
+          "reason": "",
+          "supportingvalue": "68",
+          "attachmentfilename": "",
+          "attachmenttype": "",
+          "code": "",
+          "unit": "kg",
+          "timingperiodfrom": "",
+          "timingperiodto": "",
+          "created_date": "2026-06-04T11:15:06.780Z",
+          "updated_date": "2026-06-04T11:15:06.780Z"
+        },
+        {
+          "provclaimno": "5645112233",
+          "sequenceno": "61562786",
+          "category": "radiology-modality-validity",
+          "reason": "",
+          "supportingvalue": "ANGIOSCOPY",
+          "attachmentfilename": "",
+          "attachmenttype": "",
+          "code": "",
+          "unit": "kg",
+          "timingperiodfrom": "2026-08-04T11:15:06.780Z",
+          "timingperiodto": "2026-10-25T11:15:06.780Z",
+          "created_date": "2026-06-04T11:15:06.780Z",
+          "updated_date": "2026-06-04T11:15:06.780Z"
+        }
+      ],
+      "version": null,
+      "tableName": "nphies_claimsupportinginfo"
+    },
+    {
+      "query": "SELECT DISTINCT cvp.provclaimno...",
+      "result": [],
+      "version": null,
+      "tableName": "nphies_claimvisionprescription"
+    },
+    {
+      "query": "SELECT DISTINCT c.provclaimno, cov.coverageid...",
+      "result": [],
+      "version": null,
+      "tableName": "nphies_coverage"
+    },
+    {
+      "query": "SELECT DISTINCT c.provclaimno, cc.coverageclassid...",
+      "result": [],
+      "version": null,
+      "tableName": "nphies_coverage_class"
+    },
+    {
+      "query": "SELECT DISTINCT ce.provclaimno, ee.encounteremergencyid...",
+      "result": [],
+      "version": null,
+      "tableName": "nphies_encounteremergency"
+    },
+    {
+      "query": "SELECT e.eventid...",
+      "result": [
+        {
+          "eventid": "38",
+          "eventtype": "RADIOLOGY_ORDER",
+          "createddate": "2026-06-04T11:15:07.033Z",
+          "issubmitted": "false",
+          "provclaimno": "5645112233",
+          "created_date": "2026-06-04T11:15:07.033Z"
+        }
+      ],
+      "version": null,
+      "tableName": "nphies_events"
+    },
+    {
+      "query": "SELECT DISTINCT ict.provclaimno...",
+      "result": [
+        {
+          "provclaimno": "5645112233",
+          "careteamsequenceno": "148366",
+          "itemsequenceno": "61562777",
+          "created_date": "2026-06-04T11:15:10.513Z",
+          "updated_date": "2026-06-04T11:15:10.513Z"
+        },
+        {
+          "provclaimno": "5645112233",
+          "careteamsequenceno": "148366",
+          "itemsequenceno": "61562778",
+          "created_date": "2026-06-04T11:15:10.513Z",
+          "updated_date": "2026-06-04T11:15:10.513Z"
+        }
+      ],
+      "version": null,
+      "tableName": "nphies_itemcareteam"
+    },
+    {
+      "query": "SELECT DISTINCT id.provclaimno...",
+      "result": [
+        {
+          "provclaimno": "5645112233",
+          "created_date": "2026-06-04T11:15:10.153Z",
+          "updated_date": "2026-06-04T11:15:10.153Z",
+          "itemsequenceno": "61562777",
+          "diagnosissequenceno": "1"
+        },
+        {
+          "provclaimno": "5645112233",
+          "created_date": "2026-06-04T11:15:10.153Z",
+          "updated_date": "2026-06-04T11:15:10.153Z",
+          "itemsequenceno": "61562777",
+          "diagnosissequenceno": "2"
+        },
+        {
+          "provclaimno": "5645112233",
+          "created_date": "2026-06-04T11:15:10.153Z",
+          "updated_date": "2026-06-04T11:15:10.153Z",
+          "itemsequenceno": "61562778",
+          "diagnosissequenceno": "1"
+        },
+        {
+          "provclaimno": "5645112233",
+          "created_date": "2026-06-04T11:15:10.153Z",
+          "updated_date": "2026-06-04T11:15:10.153Z",
+          "itemsequenceno": "61562778",
+          "diagnosissequenceno": "2"
+        }
+      ],
+      "version": null,
+      "tableName": "nphies_itemdiagnosis"
+    },
+    {
+      "query": "SELECT DISTINCT isi.provclaimno...",
+      "result": [
+        {
+          "provclaimno": "5645112233",
+          "supportinginfosequenceno": "45026632",
+          "itemsequenceno": "61562777",
+          "created_date": "2026-06-04T11:15:10.887Z",
+          "updated_date": "2026-06-04T11:15:10.887Z"
+        },
+        {
+          "provclaimno": "5645112233",
+          "supportinginfosequenceno": "61562784",
+          "itemsequenceno": "61562777",
+          "created_date": "2026-06-04T11:15:10.887Z",
+          "updated_date": "2026-06-04T11:15:10.887Z"
+        },
+        {
+          "provclaimno": "5645112233",
+          "supportinginfosequenceno": "61562785",
+          "itemsequenceno": "61562777",
+          "created_date": "2026-06-04T11:15:10.887Z",
+          "updated_date": "2026-06-04T11:15:10.887Z"
+        },
+        {
+          "provclaimno": "5645112233",
+          "supportinginfosequenceno": "45026632",
+          "itemsequenceno": "61562778",
+          "created_date": "2026-06-04T11:15:10.887Z",
+          "updated_date": "2026-06-04T11:15:10.887Z"
+        },
+        {
+          "provclaimno": "5645112233",
+          "supportinginfosequenceno": "61562784",
+          "itemsequenceno": "61562778",
+          "created_date": "2026-06-04T11:15:10.887Z",
+          "updated_date": "2026-06-04T11:15:10.887Z"
+        },
+        {
+          "provclaimno": "5645112233",
+          "supportinginfosequenceno": "61562785",
+          "itemsequenceno": "61562778",
+          "created_date": "2026-06-04T11:15:10.887Z",
+          "updated_date": "2026-06-04T11:15:10.887Z"
+        },
+         {
+          "provclaimno": "5645112233",
+          "supportinginfosequenceno": "61562786",
+          "itemsequenceno": "61562778",
+          "created_date": "2026-06-04T11:15:10.887Z",
+          "updated_date": "2026-06-04T11:15:10.887Z"
+        }
+ 
+      ],
+      "version": null,
+      "tableName": "nphies_itemsupportinginfo"
+    },
+    {
+      "query": "SELECT DISTINCT pd.provclaimno...",
+      "result": [],
+      "version": null,
+      "tableName": "nphies_pregnancy_details"
+    },
+    {
+      "query": "SELECT DISTINCT ce.provclaimno...",
+      "result": [],
+      "version": null,
+      "tableName": "nphiesencounterhospitalization"
+    }
+  ],
+  "agentVersion": "1.0.0",
+  "providerType": "DEFAULT",
+  "agentSubmissionId": "sub-1782731377512",
+  "providerQueryResult": {
+    "nphiesProviderId": "11000000002333",
+    "nphiesOrganizationName": "MyClinic"
+  }
+}

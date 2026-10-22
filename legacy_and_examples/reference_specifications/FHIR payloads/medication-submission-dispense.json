@@ -1,0 +1,180 @@
+{
+    "eventId": "123123",
+    "eventType": "MEDICATION_DISPENSE",
+    "uhrRequest": {
+        "id": 1,
+        "midtableId": 1,
+        "source": 123,
+        "createdDate": "2025-11-05",
+        "visitNumber": "VISITNUMBER1",
+        "provider": {
+            "providerID": "15000000112233",
+            "providerName": "International University Hospital",
+            "nphiesOrganizationID": "2.16.840.1.113883.3.3731.5.1",
+            "nphiesOrganizationName": "International University Hospital",
+            "contactInfo": {
+                "phoneNumber": "+979874569874"
+            }
+        },
+        "caseInfo": {
+            "visitType": "INPATIENT",
+            "patientLocation": {
+                "room": null,
+                "bed": null,
+                "pointOfCare": null,
+                "facilityId": null
+            },
+            "department": null,
+            "admissionMethod": "OTHER",
+            "visitNumber": "VISITNUMBER1",
+            "admitDate": "2025-11-05",
+            "dischargeDate": "",
+            "lengthOfStay": 5,
+            "chiefComplaints": "Having stomach pain"
+        },
+        "patient": {
+            "id": "30000999999999",
+            "healthId": "30000999999999",
+            "age": 23,
+            "gender": "MALE",
+            "dateOfBirth": "1997-12-11",
+            "nationality": "saudi",
+            "contactInfo": {
+                "fullName": "YAHYA SAEED A ALQAHTANI",
+                "firstName": "YAHYA SAEED",
+                "lastName": "A ALQAHTANI",
+                "phoneNumber": "+979874569444",
+                "email": "yahya@gg.com",
+                "address": {
+                    "street": "",
+                    "city": "Riyadh",
+                    "postalCode": 13337,
+                    "country": "Saudi Arabia"
+                }
+            },
+            "height": {
+                "unit": "CENTIMETER",
+                "value": "160"
+            },
+            "weight": {
+                "unit": "KILOGRAM",
+                "value": "55"
+            },
+            "maritalStatus": "SINGLE",
+            "guardianContactInfo": null
+        },
+        "careTeam": [
+            {
+                "id": "00TEST1980",
+                "nationalId": "00TEST1980",
+                "contactInfo": {
+                    "fullName": "Aditya Khan",
+                    "firstName": "Aditya",
+                    "lastName": "Khan",
+                    "phoneNumber": "+979874123875",
+                    "email": "yahya@gg.com",
+                    "address": {
+                        "street": "Test",
+                        "city": "Riyadh",
+                        "postalCode": 13337,
+                        "country": "Saudi Arabia"
+                    }
+                },
+                "type": "doctor",
+                "role": "100000003",
+                "speciality": "CE9D7C6B-62F9-E811-B80F-005056AD2FD8",
+                "notes": "I am an onco surgeon."
+            }
+        ],
+        "diagnosis": [
+            {
+                "id": 2,
+                "code": "ACTIVE_PROBLEMS",
+                "priority": "PRINCIPAL",
+                "info": [
+                    {
+                        "diagnosisProcedureCode": "A25.0",
+                        "description": "Effusion of joint, lower leg",
+                        "dateFrom": "2025-12-10",
+                        "status": "COMPLETED"
+                    }
+                ]
+            }
+        ],
+        "services": [
+            {
+                "id": 4,
+                "code": "123-1242-1123",
+                "date": "",
+                "isLab": true,
+                "priority": "ASAP",
+                "isFasting": true
+            }
+        ],
+        "medication": [
+            {
+                "id": 4,
+                "medicine": {
+                    "code": "010203-0101-5406-02-11",
+                    "displayName": "otozol clotrimazole '1 % solution/ drops"
+                },
+                "packaging": {
+                    "code": "27",
+                    "displayName": "bottle, spray"
+                },
+                "dosage": {
+                    "form": {
+                        "code": "0601",
+                        "displayName": "gel"
+                    },
+                    "prescriptionValidityPeriod": {
+                        "start": "2025-11-05",
+                        "end": "2025-12-05"
+                    },
+                    "quantity": {
+                        "unit": "MILLIGRAM",
+                        "value": "30"
+                    },
+                    "duration": {
+                        "unit": "DAY",
+                        "value": "30"
+                    },
+                    "dosagePeriod": {
+                        "start": "2025-11-13",
+                        "end": "2025-12-12"
+                    },
+                    "instruction": "Take medicine before lunch and dinner",
+                    "route": "26643006",
+                    "asNeeded": true,
+                    "doseAndRate": {
+                        "unit": "MILLIGRAM",
+                        "value": "30"
+                    }
+                },
+                "prescriptionType": "CONTROLLED",
+                "dispenseType": "FF",
+                "notes": "Take 5mg medicine direct.",
+                "batchInfo": {
+                    "lotNumber": "ABDCDff111233",
+                    "expirationDate": "2023-07-27"
+                },
+                "receiver": {
+                    "healthId": "30000999999999"
+                },
+                "whenHandedOver": "2025-07-27",
+                "dosageTiming": {
+                    "code": "422114001",
+                    "displayName": "Once"
+                }
+            }
+        ],
+        "allergy": [
+            {
+                "code": 442441000124101,
+                "severity": "MODERATE",
+                "type": "FOOD_ALLERGY",
+                "notes": "food, clinical finding"
+            }
+        ]
+    }
+}

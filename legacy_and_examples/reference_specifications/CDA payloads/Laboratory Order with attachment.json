@@ -1,0 +1,211 @@
+{
+    "uhrRequest": {
+        "id": 12345,
+        "midtableId": 67890,
+        "source": "HospitalSystem",
+        "createdDate": "2025-11-30T12:34:56Z",
+        "visitNumber": "VN0001",
+        "provider": {
+            "providerID": "PROV123",
+            "providerName": "Health Provider Inc",
+            "nphiesOrganizationID": "ORG789",
+            "nphiesOrganizationName": "Health Org",
+            "contactInfo": {
+                "name": "Dr. John Doe",
+                "phoneNumber": "+1234567890",
+                "email": "johndoe@example.com",
+                "address": {
+                    "street": "123 Health St",
+                    "city": "Careville",
+                    "postalCode": "12345",
+                    "country": "USA"
+                }
+            }
+        },
+        "caseInfo": {
+            "visitType": "INPATIENT",
+            "patientLocation": {
+                "room": "101A",
+                "bed": "1",
+                "pointOfCare": "Ward A",
+                "facilityId": "FAC100"
+            },
+            "department": {
+                "key": "MT28",
+                "value": "Pediatrics Gastroenterology"
+            },
+            "admissionMethod": "OTHER",
+            "visitNumber": "VN0001",
+            "admitDate": "2025-11-29T15:00:00Z",
+            "dischargeDate": "2025-12-05T10:00:00Z",
+            "lengthOfStay": 6,
+            "observations": {
+                "height": {
+                    "unit": "CENTIMETER",
+                    "value": 175
+                },
+                "weight": {
+                    "unit": "KILOGRAM",
+                    "value": 70
+                },
+                "preliminaryDiagnosis": "Possible myocardial infarction",
+                "preexistingCondition": "Hypertension",
+                "riskFactors": "Smoking",
+                "chronologicalAge": "45",
+                "fasting": "NON_FASTING",
+                "medicalHistory": "Patient has a history of high blood pressure."
+            }
+        },
+        "patient": {
+            "id": "PAT123456",
+            "healthId": "HID987654",
+            "contactInfo": {
+                "name": "Jane Smith",
+                "phoneNumber": "+0987654321",
+                "email": "janesmith@example.com",
+                "address": {
+                    "street": "456 Elm St",
+                    "city": "Healthtown",
+                    "postalCode": "67890",
+                    "country": "USA"
+                }
+            },
+            "age": 45,
+            "gender": "FEMALE",
+            "dateOfBirth": "1980-01-15",
+            "nationality": "USA",
+            "maritalStatus": "MARRIED",
+            "guardianContactInfo": {
+                "name": "John Smith",
+                "phoneNumber": "+1122334455",
+                "email": "johnsmith@example.com",
+                "address": {
+                    "street": "789 Oak St",
+                    "city": "Caretown",
+                    "postalCode": "24680",
+                    "country": "USA"
+                }
+            }
+        },
+        "careTeam": [
+            {
+                "id": "CTM001",
+                "nationalId": "NID123",
+                "contactInfo": {
+                    "name": "Nurse Nancy",
+                    "phoneNumber": "+1112223333",
+                    "email": "nancynurse@example.com",
+                    "address": {
+                        "street": "111 Care Rd",
+                        "city": "Nurse City",
+                        "postalCode": "11223",
+                        "country": "USA"
+                    }
+                },
+                "type": "Nurse",
+                "speciality": "General Care",
+                "role": "Caregiver",
+                "notes": "Primary nurse for patient."
+            }
+        ],
+        "diagnosis": [
+            {
+                "id": 1,
+                "code": "PREOPERATIVE_DIAGNOSIS",
+                "priority": "PRINCIPAL",
+                "info": [
+                    {
+                        "diagnosisProcedureCode": "M25.46",
+                        "description": "Effusion of joint, lower leg",
+                        "dateFrom": "2025-12-10",
+                        "dateTo": "2025-12-20",
+                        "status": "ACTIVE"
+                    }
+                ]
+            }
+        ],
+        "services": [
+            {
+                "id": 1001,
+                "code": "SVC001",
+                "date": "2025-11-30T08:00:00Z",
+                "isLab": true,
+                "priority": "ROUTINE",
+                "isFasting": false,
+                "serviceInfo": {
+                    "laboratoryOrders": [
+                        {
+                            "specimenCollection": {
+                                "specimenType": "FBLOOD",
+                                "specimenSource": "FBLOOD",
+                                "collectionDate": "2025-11-29T08:15:00Z"
+                            },
+                            "sampleOperations": [
+                                {
+                                    "priority": "ROUTINE",
+                                    "title": "CBC",
+                                    "text": "Complete blood count analysis"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "medication": [
+            {
+                "id": 2001,
+                "code": "MED123",
+                "dosage": {
+                    "form": "tablet",
+                    "quantity": {
+                        "unit": "MILLIGRAM",
+                        "value": 500
+                    },
+                    "duration": {
+                        "unit": "DAY",
+                        "value": 5
+                    },
+                    "dosagePeriod": {
+                        "start": "2025-11-30",
+                        "end": "2025-12-05"
+                    },
+                    "instruction": "Take with water",
+                    "route": "oral"
+                },
+                "prescriptionType": "CONTROLLED",
+                "notes": "Two times daily"
+            }
+        ],
+        "allergy": [
+            {
+                "code": "ALG001",
+                "severity": "MILD",
+                "type": "DRUG_ALLERGY",
+                "notes": "Penicillin allergy"
+            }
+        ],
+        "operativeNotes": [
+            {
+                "key": "CHIEF_COMPLAINT",
+                "description": "Patient feels pressure on the lungs"
+            }
+        ],
+        "priorInfo": {
+            "priorPatientIdentifiers": [
+                "OLDID123"
+            ],
+            "priorVisitNumber": "OLDVN789"
+        },
+        "attachments": {
+            "sharedTokens": [
+                {
+                    "sharedTokenId": "LAB_ORDER_db208c28-a658-4491-b08c-e5aa51bf9df3-dummy-image.png"
+                }
+            ],
+            "attachmentType": "LAB_ORDER"
+        }
+    },
+    "eventId": "1235",
+    "eventType": "LAB_ORDER"
+}

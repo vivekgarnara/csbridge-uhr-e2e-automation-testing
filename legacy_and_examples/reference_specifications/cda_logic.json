@@ -1,0 +1,276 @@
+{
+  "Sheet2": [
+    [
+      "Event Type",
+      "Event Name",
+      "UHR NPHIS Schema",
+      null,
+      null,
+      "Notes"
+    ],
+    [
+      null,
+      null,
+      "Table",
+      "Field ",
+      "Value",
+      null
+    ],
+    [
+      "CDA",
+      "DISCHARGE_SUMMARY",
+      "nphies_claiminfo",
+      "CLAIMTYPE",
+      "Institutional / Professional",
+      "IF\n  CLAIMTYPE IN (Institutional)\n  CLAIMSUBTYPE IN (IMP)\n  HOSPITALDISCHARGEDISPOSITION IN (\n    1. Discharge/transfer to an Acute Hospital\n    2. Statistical Discharge-Type Change\n    3. Statistical discharge from leave\n    4. Home/Other\n    5. Discharge /Transfer to a Residential Ageing Service\n    6. Discharge/Transfer to a Psychiatric Hospital\n    7. Discharge /Transfer to Other Health Care Accommodation \n    8. Left Against Medical Advice\n    9. DiedPatient still in hospital\n   )\n    AND ENCOUNTERENDDATE IS NOT NULL\n    AND diagnosis exists\n    AND physician exists\n\nElse IF\n  CLAIMTYPE IN (Professional)\n  CLAIMSUBTYPE IN (Emergency)\n  EMERGENCYDEPARTMENTDISPOSITION IN (\n   1. Admitted to this hospital\n   2. Non-admitted patient ED episode completed-departed\n   3. Non-admitted patient ED episode completed-referred\n   4. Did Not Wait\n   5. Left at Own Risk\n   6. Died in ED\n   7. Dead on Arrival\n   8. Registered\n  )\n    AND ENCOUNTERENDDATE IS NOT NULL\n    AND diagnosis exists\n    AND physician exists\n\nTHEN\n    Trigger CDA Discharge Summary"
+    ],
+    [
+      null,
+      null,
+      null,
+      "CLAIMSUBTYPE",
+      "IMP / Emergency",
+      null
+    ],
+    [
+      null,
+      null,
+      "nphiesencounterhospitalization if claim type institutional and claim subtype is IMP/\nnphies_encounteremergency if claim type professional and claim subtype is emergency",
+      "HOSPITALDISCHARGEDISPOSITION / EMERGENCYDEPARTMENTDISPOSITION",
+      "Any lov (list of value) for Hospital Discharge:-\n1. Discharge/transfer to an Acute Hospital\n2. Statistical Discharge-Type Change\n3. Statistical discharge from leave\n4. Home/Other\n5. Discharge /Transfer to a Residential Ageing Service\n6. Discharge/Transfer to a Psychiatric Hospital\n7. Discharge /Transfer to Other Health Care Accommodation \n8. Left Against Medical Advice\n9. DiedPatient still in hospital\n\nAny lov (list of value) for Emergency:-\n1. Admitted to this hospital\n2. Non-admitted patient ED episode completed-departed\n3. Non-admitted patient ED episode completed-referred\n4. Did Not Wait\n5. Left at Own Risk\n6. Died in ED\n7. Dead on Arrival\n8. Registered",
+      null
+    ],
+    [
+      null,
+      null,
+      "nphies_claimencounters",
+      "ENCOUNTERENDDATE",
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      "nphies_claimdiagnosis",
+      "DIAGNOSISCODE",
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      "nphies_claimcareteam",
+      "PHYSICIANID",
+      null,
+      null
+    ],
+    [
+      "CDA",
+      "OUTPATIENT_ENCOUNTER_SUMMARY",
+      "nphies_claimencounters",
+      "ENCOUNTERCLASS",
+      "Ambulatory / Home Health/ Virtual",
+      "IF\n    ENCOUNTERCLASS IN (Ambulatory / Home Health/ Virtual)\n    AND ENCOUNTERENDDATE IS NOT NULL\n    AND ENCOUNTERSTATUS exists\n    AND diagnosis exists\n    AND physician exists\n    AND SERVICECODE exists\nTHEN\n    Trigger CDA Outpatient Encounter Summary"
+    ],
+    [
+      null,
+      null,
+      null,
+      "ENCOUNTERSTATUS",
+      "Any Value exists, for example, Planned, Arrived, Cancelled, and many others. No reliance on a specific value, but it must have some value in it.",
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      "ENCOUNTERENDDATE",
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      "nphies_claimdiagnosis",
+      "DIAGNOSISCODE",
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      "nphies_claimcareteam",
+      "PHYSICIANID",
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      "nphies_claimitem",
+      "SERVICECODE",
+      null,
+      null
+    ],
+    [
+      "CDA",
+      "OPERATIVE_NOTE",
+      "nphies_claimitem",
+      "SERVICETYPE",
+      "PROCEDURE",
+      "IF\n    SERVICETYPE IN (PROCEDURE)\n    AND ENDDATE IS NOT NULL\n    AND physician exists\n    AND SERVICECODE exists\n    AND ENCOUNTERSTATUS exists\nTHEN\n    Trigger CDA Operative Note"
+    ],
+    [
+      null,
+      null,
+      null,
+      "SERVICECODE",
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      "ENDDATE",
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      "nphies_claimcareteam",
+      "PHYSICIANID",
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      "nphies_claimencounters",
+      "ENCOUNTERSTATUS",
+      "Any Value exists, for example, Planned, Arrived, Cancelled, and many others. No reliance on a specific value, but it must have some value in it.",
+      null
+    ],
+    [
+      "CDA",
+      "NEWBORN_DISCHARGE",
+      "nphies_claiminfo",
+      "ISNEWBORN",
+      "Y",
+      "IF\n  ISNEWBORN IN (Y)\n  CLAIMTYPE IN (Institutional)\n  CLAIMSUBTYPE IN (IMP)\n  HOSPITALDISCHARGEDISPOSITION IN (\n    1. Discharge/transfer to an Acute Hospital\n    2. Statistical Discharge-Type Change\n    3. Statistical discharge from leave\n    4. Home/Other\n    5. Discharge /Transfer to a Residential Ageing Service\n    6. Discharge/Transfer to a Psychiatric Hospital\n    7. Discharge /Transfer to Other Health Care Accommodation \n    8. Left Against Medical Advice\n    9. DiedPatient still in hospital\n   )\n    AND ENCOUNTERENDDATE IS NOT NULL\n    AND diagnosis exists\n    AND physician exists\n\nElse IF\n  CLAIMTYPE IN (Professional)\n  CLAIMSUBTYPE IN (Emergency)\n  EMERGENCYDEPARTMENTDISPOSITION IN (\n   1. Admitted to this hospital\n   2. Non-admitted patient ED episode completed-departed\n   3. Non-admitted patient ED episode completed-referred\n   4. Did Not Wait\n   5. Left at Own Risk\n   6. Died in ED\n   7. Dead on Arrival\n   8. Registered\n  )\n    AND ENCOUNTERENDDATE IS NOT NULL\n    AND diagnosis exists\n    AND physician exists\n\nTHEN\n    Trigger CDA Newborn Discharge"
+    ],
+    [
+      null,
+      null,
+      null,
+      "CLAIMTYPE",
+      "Institutional / Professional",
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      "CLAIMSUBTYPE",
+      "IMP / Emergency",
+      null
+    ],
+    [
+      null,
+      null,
+      "nphiesencounterhospitalization if claim type institutional and claim subtype is IMP/\nnphies_encounteremergency if claim type professional and claim subtype is emergency",
+      "HOSPITALDISCHARGEDISPOSITION / EMERGENCYDEPARTMENTDISPOSITION",
+      "Any lov (list of value) for Hospital Discharge:-\n1. Discharge/transfer to an Acute Hospital\n2. Statistical Discharge-Type Change\n3. Statistical discharge from leave\n4. Home/Other\n5. Discharge /Transfer to a Residential Ageing Service\n6. Discharge/Transfer to a Psychiatric Hospital\n7. Discharge /Transfer to Other Health Care Accommodation \n8. Left Against Medical Advice\n9. DiedPatient still in hospital\n\nAny lov (list of value) for Emergency:-\n1. Admitted to this hospital\n2. Non-admitted patient ED episode completed-departed\n3. Non-admitted patient ED episode completed-referred\n4. Did Not Wait\n5. Left at Own Risk\n6. Died in ED\n7. Dead on Arrival\n8. Registered",
+      null
+    ],
+    [
+      null,
+      null,
+      "nphies_claimencounters",
+      "ENCOUNTERENDDATE",
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      "nphies_claimdiagnosis",
+      "DIAGNOSISCODE",
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      "nphies_claimcareteam",
+      "PHYSICIANID",
+      null,
+      null
+    ],
+    [
+      "CDA",
+      "MATERNAL_DISCHARGE",
+      "nphies_claimitem",
+      "ISMATERNITY",
+      "Y",
+      "IF\n  ISMATERNITY IN (Y)\n  GENDER IN (F)\n  CLAIMTYPE IN (Institutional)\n  CLAIMSUBTYPE IN (IMP)\n  HOSPITALDISCHARGEDISPOSITION IN (\n    1. Discharge/transfer to an Acute Hospital\n    2. Statistical Discharge-Type Change\n    3. Statistical discharge from leave\n    4. Home/Other\n    5. Discharge /Transfer to a Residential Ageing Service\n    6. Discharge/Transfer to a Psychiatric Hospital\n    7. Discharge /Transfer to Other Health Care Accommodation \n    8. Left Against Medical Advice\n    9. DiedPatient still in hospital\n   )\n    AND ENCOUNTERENDDATE IS NOT NULL\n    AND diagnosis exists\n    AND physician exists\n\nElse IF\n  CLAIMTYPE IN (Professional)\n  CLAIMSUBTYPE IN (Emergency)\n  EMERGENCYDEPARTMENTDISPOSITION IN (\n   1. Admitted to this hospital\n   2. Non-admitted patient ED episode completed-departed\n   3. Non-admitted patient ED episode completed-referred\n   4. Did Not Wait\n   5. Left at Own Risk\n   6. Died in ED\n   7. Dead on Arrival\n   8. Registered\n  )\n    AND ENCOUNTERENDDATE IS NOT NULL\n    AND diagnosis exists\n    AND physician exists\n\nTHEN\n    Trigger CDA Maternal Discharge"
+    ],
+    [
+      null,
+      null,
+      "nphies_beneficiary",
+      "GENDER",
+      "F",
+      null
+    ],
+    [
+      null,
+      null,
+      "nphies_claiminfo",
+      "CLAIMTYPE",
+      "Institutional / Professional",
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      "CLAIMSUBTYPE",
+      "IMP / Emergency",
+      null
+    ],
+    [
+      null,
+      null,
+      "nphiesencounterhospitalization/nphies_encounteremergency",
+      "HOSPITALDISCHARGEDISPOSITION / EMERGENCYDEPARTMENTDISPOSITION",
+      "Any lov (list of value) for Hospital Discharge:-\n1. Discharge/transfer to an Acute Hospital\n2. Statistical Discharge-Type Change\n3. Statistical discharge from leave\n4. Home/Other\n5. Discharge /Transfer to a Residential Ageing Service\n6. Discharge/Transfer to a Psychiatric Hospital\n7. Discharge /Transfer to Other Health Care Accommodation \n8. Left Against Medical Advice\n9. DiedPatient still in hospital\n\nAny lov (list of value) for Emergency:-\n1. Admitted to this hospital\n2. Non-admitted patient ED episode completed-departed\n3. Non-admitted patient ED episode completed-referred\n4. Did Not Wait\n5. Left at Own Risk\n6. Died in ED\n7. Dead on Arrival\n8. Registered",
+      null
+    ],
+    [
+      null,
+      null,
+      "nphies_claimencounters",
+      "ENCOUNTERENDDATE",
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      "nphies_claimdiagnosis",
+      "DIAGNOSISCODE",
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      "nphies_claimcareteam",
+      "PHYSICIANID",
+      null,
+      null
+    ]
+  ]
+}

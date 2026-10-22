@@ -1,0 +1,323 @@
+{
+    "eventId": "1235",
+    "eventType": "MATERNAL_DISCHARGE",
+    "uhrRequest": {
+        "id": 1,
+        "midtableId": 1,
+        "source": "123",
+        "createdDate": "2025-10-30T09:15:00+03:00",
+        "visitNumber": "202510300001",
+        "provider": {
+            "providerID": 15,
+            "providerName": "International University Hospital",
+            "nphiesOrganizationName": "International University Hospital",
+            "nphiesOrganizationID": "15000000112233",
+            "contactInfo": {
+                "phoneNumber": "+966112345678",
+                "email": "info@nhicclinic.sa",
+                "address": {
+                    "street": "3920 Mathar Alshibani St",
+                    "city": "Riyadh",
+                    "postalCode": "12629",
+                    "country": "Saudi Arabia"
+                }
+            }
+        },
+        "caseInfo": {
+            "visitType": "INPATIENT",
+            "patientLocation": {
+                "room": "101",
+                "bed": "A",
+                "pointOfCare": "MED-UNIT-1",
+                "facilityId": "2.16.840.1.113883.3.3731.1.2.2"
+            },
+            "admissionMethod": "OTHER",
+            "visitNumber": "202510300001",
+            "admitDate": "2025-10-30",
+            "dischargeDate": "",
+            "lengthOfStay": 3,
+            "department": {
+                "key": "MT28",
+                "value": "Pediatrics Gastroenterology"
+            },
+            "observations": {
+                "height": {
+                    "unit": "CENTIMETER",
+                    "value": 175
+                },
+                "weight": {
+                    "unit": "KILOGRAM",
+                    "value": 70
+                },
+                "fasting": "FASTING",
+                "medicalHistory": "Chronic pain before 2 years ago"
+            }
+        },
+        "patient": {
+            "id": 2267,
+            "healthId": "30511223344557",
+            "age": 40,
+            "gender": "MALE",
+            "dateOfBirth": "1985-01-15",
+            "nationality": "SAU",
+            "contactInfo": {
+                "fullName": "ALQAHTANI YAHYA SAEED",
+                "firstName": "YAHYA",
+                "lastName": "SAEED A",
+                "phoneNumber": "+966501234567",
+                "address": {
+                    "street": "2448 Zarga Alyamamah St",
+                    "city": "Riyadh",
+                    "postalCode": "13337",
+                    "country": "Saudi Arabia"
+                }
+            },
+            "maritalStatus": "MARRIED",
+            "guardianContactInfo": {
+                "fullName": "Mohammed Al-Ghamdi",
+                "firstName": "Mohammed",
+                "lastName": "Al-Ghamdi",
+                "phoneNumber": "+966501234567",
+                "address": {
+                    "street": "1234 Guardian St",
+                    "city": "Riyadh",
+                    "postalCode": "13337",
+                    "country": "Saudi Arabia"
+                }
+            }
+        },
+        "careTeam": [
+            {
+                "id": "05RM14422",
+                "nationalId": "102344",
+                "contactInfo": {
+                    "fullName": "Abdullah Al-Harbi",
+                    "firstName": "Abdullah",
+                    "lastName": "Al-Harbi",
+                    "phoneNumber": "+966509876543",
+                    "email": "abdullah.alharbi@nhicclinic.sa",
+                    "address": {
+                        "street": "3920 Mathar Alshibani St",
+                        "city": "Riyadh",
+                        "postalCode": "12629",
+                        "country": "Saudi Arabia"
+                    }
+                },
+                "type": "doctor",
+                "speciality": "Healthcare Specialty Identifier",
+                "notes": "Attending physician for cardiac observation case",
+                "role": "Attending Doctor"
+            }
+        ],
+        "diagnosis": [
+            {
+                "id": 1,
+                "code": "PREOPERATIVE_DIAGNOSIS",
+                "priority": "PRINCIPAL",
+                "info": [
+                    {
+                        "diagnosisProcedureCode": "M25.46",
+                        "description": "Effusion of joint, lower leg",
+                        "dateFrom": "2025-12-10",
+                        "dateTo": "2025-12-20",
+                        "status": "ACTIVE"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "code": "POSTPROCEDURE_DIAGNOSIS",
+                "priority": "PRINCIPAL",
+                "info": [
+                    {
+                        "diagnosisProcedureCode": "M25.46",
+                        "description": "Effusion of joint, lower leg",
+                        "dateFrom": "2025-12-10",
+                        "status": "ACTIVE"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "code": "ACTIVE_PROBLEMS",
+                "priority": "PRINCIPAL",
+                "info": [
+                    {
+                        "diagnosisProcedureCode": "160245009",
+                        "description": "Have breathing problem",
+                        "dateFrom": "2025-12-10",
+                        "status": "COMPLETED"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "code": "POSTOPERATIVE_DIAGNOSIS",
+                "priority": "PRINCIPAL",
+                "info": [
+                    {
+                        "diagnosisProcedureCode": "M25.46",
+                        "description": "Effusion of joint, lower leg",
+                        "dateFrom": "2025-12-10",
+                        "status": "ACTIVE"
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "code": "PLANNED_PROCEDURE",
+                "priority": "PRINCIPAL",
+                "info": [
+                    {
+                        "diagnosisProcedureCode": "32123-00",
+                        "description": "Anoplasty",
+                        "dateFrom": "2025-12-10",
+                        "status": "ELECTIVE"
+                    }
+                ]
+            }
+        ],
+        "services": [
+            {
+                "id": 3,
+                "code": "new",
+                "date": "2023-01-15",
+                "isLab": false,
+                "priorty": "ASAP",
+                "isFasting": true
+            },
+            {
+                "id": 4,
+                "code": "XCHES",
+                "date": "",
+                "isLab": false,
+                "priorty": "ASAP",
+                "isFasting": true,
+                "serviceInfo": {
+                    "radiologyProcedures": [
+                        {
+                            "procedure": "XCHES",
+                            "procedureDescription": "XR Chest",
+                            "modality": "RADIOGRAPHIC_IMAGING",
+                            "modalityDescription": "Radiographic imaging",
+                            "bodySite": "BREAST_STRUCTURE",
+                            "bodySiteDescription": "breast structure",
+                            "orderIdentifier": "1234567",
+                            "accessionNumber": "10523475"
+                        }
+                    ]
+                }
+            }
+        ],
+        "medication": [
+            {
+                "id": 1,
+                "medicine": {
+                    "code": "800402-0130-5406",
+                    "displayName": "SASA"
+                },
+                "packaging": {
+                    "code": "321",
+                    "displayName": "BULK"
+                },
+                "code": "800402-0130-5406",
+                "dosage": {
+                    "form": {
+                        "code": "5406",
+                        "displayName": "ORAL"
+                    },
+                    "prescriptionValidityPeriod": {
+                        "start": "2025-11-05",
+                        "end": "2025-12-05"
+                    },
+                    "quantity": {
+                        "unit": "MILLIGRAM",
+                        "value": "30"
+                    },
+                    "duration": {
+                        "unit": "DAY",
+                        "value": "30"
+                    },
+                    "dosagePeriod": {
+                        "start": "2025-11-13",
+                        "end": "2025-12-12"
+                    },
+                    "instruction": "Take medicine before lunch and dinner",
+                    "route": "26643006"
+                },
+                "prescriptionType": "CONTROLLED",
+                "notes": "Take 5mg medicine direct."
+            }
+        ],
+        "allergy": [
+            {
+                "code": 123,
+                "severity": "SEVERE",
+                "type": "DRUG_ALLERGY",
+                "notes": "asd"
+            }
+        ],
+        "operativeNotes": [
+            {
+                "key": "SURGICAL_PROCEDURE",
+                "description": "This is the narrative description of the surgical procedure(s) performed for this encounter"
+            },
+            {
+                "key": "PROCEDURE_FINDINGS",
+                "description": "This is the narrative description of the findings made during the procedure"
+            },
+            {
+                "key": "SURGICAL_DRAINS",
+                "description": "This is the narrative description of surgical drains"
+            },
+            {
+                "key": "PROCEDURE_SPECIMENS_TAKEN",
+                "description": "This is the narrative description of specimen taken during the procedure"
+            },
+            {
+                "key": "COMPLICATIONS",
+                "description": "This is the narrative description of complications, which arose during the procedure"
+            },
+            {
+                "key": "PROCEDURE_ANESTHESIA",
+                "description": "This is the narrative description of the anesthesia"
+            },
+            {
+                "key": "BLOOD_LOSS",
+                "description": "This is the narrative description of estimated blood loss during the procedure"
+            },
+            {
+                "key": "OPERATIVE_NOTE_FLUIDS",
+                "description": "This is the narrative description of the operative note fluids"
+            },
+            {
+                "key": "PROCEDURE_DESCRIPTION",
+                "description": "This is the narrative description of the procedure"
+            },
+            {
+                "key": "IMPLANTED_MEDICAL_DEVICE",
+                "description": "This is the narrative description of the visible implanted medical devices"
+            },
+            {
+                "key": "HISTORY_OF_BLOOD_TRANSFUSION",
+                "description": "This is the narrative description of the history of blood transfusions the patient received"
+            },
+            {
+                "key": "ACUITY_ASSESSMENT",
+                "description": "This is the narrative description of the acuity assessment"
+            },
+            {
+                "key": "TREATMENT_PLAN",
+                "description": "This is the narrative description of the care plan of the patient. For the Operative Notes, it's mainly Post-Operative Instructions and Post-Operative Orders"
+            },
+            {
+                "key": "PROCEDURE_DISPOSITION",
+                "description": "This is the narrative description of the procedure disposition"
+            },
+            {
+                "key": "CHIEF_COMPLAINT",
+                "description": "Patient feels pressure on the lungs"
+            }
+        ]
+    }
+}

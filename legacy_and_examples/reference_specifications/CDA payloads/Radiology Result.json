@@ -1,0 +1,264 @@
+{
+    "eventId": "1235",
+    "eventType": "RADIOLOGY_RESULT",
+    "uhrRequest": {
+        "id": 1,
+        "midtableId": 1,
+        "source": "123",
+        "createdDate": "2025-10-30T09:15:00+03:00",
+        "visitNumber": "202510300001",
+        "provider": {
+            "providerID": 15,
+            "providerName": "International University Hospital",
+            "nphiesOrganizationName": "International University Hospital",
+            "nphiesOrganizationID": "15000000112233",
+            "contactInfo": {
+                "phoneNumber": "+966112345678",
+                "email": "info@nhicclinic.sa",
+                "address": {
+                    "street": "3920 Mathar Alshibani St",
+                    "city": "Riyadh",
+                    "postalCode": "12629",
+                    "country": "Saudi Arabia"
+                }
+            }
+        },
+        "caseInfo": {
+            "visitType": "INPATIENT",
+            "patientLocation": {
+                "room": "101",
+                "bed": "A",
+                "pointOfCare": "MED-UNIT-1",
+                "facilityId": "2.16.840.1.113883.3.3731.1.2.2"
+            },
+            "admissionMethod": "OTHER",
+            "visitNumber": "202510300001",
+            "admitDate": "2025-10-30T09:15:00+03:00",
+            "dischargeDate": "",
+            "lengthOfStay": 3,
+            "department": {
+                "key": "MT28",
+                "value": "Pediatrics Gastroenterology"
+            },
+            "observations": {
+                "height": {
+                    "unit": "CENTIMETER",
+                    "value": 175
+                },
+                "weight": {
+                    "unit": "KILOGRAM",
+                    "value": 70
+                },
+                "fasting": "FASTING",
+                "medicalHistory": "Chronic pain before 2 years ago"
+            }
+        },
+        "patient": {
+            "id": 2267,
+            "healthId": "30511223344557",
+            "age": 40,
+            "gender": "MALE",
+            "dateOfBirth": "1985-01-15",
+            "nationality": "SAU",
+            "contactInfo": {
+                "fullName": "ALQAHTANI YAHYA SAEED",
+                "firstName": "YAHYA",
+                "lastName": "SAEED A",
+                "phoneNumber": "+966501234567",
+                "address": {
+                    "street": "2448 Zarga Alyamamah St",
+                    "city": "Riyadh",
+                    "postalCode": "13337",
+                    "country": "Saudi Arabia"
+                }
+            },
+            "maritalStatus": "MARRIED",
+            "guardianContactInfo": {
+                "fullName": "Mohammed Al-Ghamdi",
+                "firstName": "Mohammed",
+                "lastName": "Al-Ghamdi",
+                "phoneNumber": "+966501234567",
+                "address": {
+                    "street": "1234 Guardian St",
+                    "city": "Riyadh",
+                    "postalCode": "13337",
+                    "country": "Saudi Arabia"
+                }
+            }
+        },
+        "careTeam": [
+            {
+                "id": "05RM14422",
+                "nationalId": "102344",
+                "contactInfo": {
+                    "fullName": "Abdullah Al-Harbi",
+                    "firstName": "Abdullah",
+                    "lastName": "Al-Harbi",
+                    "phoneNumber": "+966509876543",
+                    "email": "abdullah.alharbi@nhicclinic.sa",
+                    "address": {
+                        "street": "3920 Mathar Alshibani St",
+                        "city": "Riyadh",
+                        "postalCode": "12629",
+                        "country": "Saudi Arabia"
+                    }
+                },
+                "type": "doctor",
+                "speciality": "Healthcare Specialty Identifier",
+                "notes": "Attending physician for cardiac observation case",
+                "role": "Attending Doctor"
+            }
+        ],
+        "diagnosis": [
+            {
+                "id": 1,
+                "code": "PREOPERATIVE_DIAGNOSIS",
+                "priority": "PRINCIPAL",
+                "info": [
+                    {
+                        "diagnosisProcedureCode": "M25.46",
+                        "description": "Effusion of joint, lower leg",
+                        "dateFrom": "2025-12-10",
+                        "dateTo": "2025-12-20",
+                        "status": "ACTIVE"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "code": "POSTPROCEDURE_DIAGNOSIS",
+                "priority": "PRINCIPAL",
+                "info": [
+                    {
+                        "diagnosisProcedureCode": "M25.46",
+                        "description": "Effusion of joint, lower leg",
+                        "dateFrom": "2025-12-10",
+                        "status": "ACTIVE"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "code": "ACTIVE_PROBLEMS",
+                "priority": "PRINCIPAL",
+                "info": [
+                    {
+                        "diagnosisProcedureCode": "160245009",
+                        "description": "Have breathing problem",
+                        "dateFrom": "2025-12-10",
+                        "status": "COMPLETED"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "code": "POSTOPERATIVE_DIAGNOSIS",
+                "priority": "PRINCIPAL",
+                "info": [
+                    {
+                        "diagnosisProcedureCode": "M25.46",
+                        "description": "Effusion of joint, lower leg",
+                        "dateFrom": "2025-12-10",
+                        "status": "ACTIVE"
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "code": "PLANNED_PROCEDURE",
+                "priority": "PRINCIPAL",
+                "info": [
+                    {
+                        "diagnosisProcedureCode": "32123-00",
+                        "description": "Anoplasty",
+                        "dateFrom": "2025-12-10",
+                        "status": "ELECTIVE"
+                    }
+                ]
+            }
+        ],
+        "services": [
+            {
+                "id": 3,
+                "code": "new",
+                "date": "2023-01-15",
+                "isLab": false,
+                "priorty": "ASAP",
+                "isFasting": true
+            },
+            {
+                "id": 4,
+                "code": "XCHES",
+                "date": "",
+                "isLab": false,
+                "priorty": "ASAP",
+                "isFasting": true,
+                "serviceInfo": {
+                    "radiologyProcedures": [
+                        {
+                            "procedure": "XCHES",
+                            "procedureDescription": "XR Chest",
+                            "modality": "RADIOGRAPHIC_IMAGING",
+                            "modalityDescription": "Radiographic imaging",
+                            "bodySite": "BREAST_STRUCTURE",
+                            "bodySiteDescription": "breast structure",
+                            "orderIdentifier": "1234567",
+                            "accessionNumber": "10523475"
+                        }
+                    ]
+                }
+            }
+        ],
+        "medication": [
+            {
+                "id": 4,
+                "code": "1521361234",
+                "dosage": {
+                    "form": "tablet",
+                    "prescriptionValidityPeriod": {
+                        "start": "",
+                        "end": ""
+                    },
+                    "quantity": {
+                        "unit": "GRAM",
+                        "value": "1"
+                    },
+                    "duration": {
+                        "unit": "DAY",
+                        "value": "1"
+                    },
+                    "dosagePeriod": {
+                        "start": "",
+                        "end": ""
+                    },
+                    "instruction": "",
+                    "route": ""
+                },
+                "prescriptionType": "CONTROLLED",
+                "notes": ""
+            }
+        ],
+        "operativeNotes": [
+            {
+                "key": "CHIEF_COMPLAINT",
+                "description": "Patient feels pressure on the lungs"
+            }
+        ],
+        "allergy": [
+            {
+                "code": 123,
+                "severity": "SEVERE",
+                "type": "DRUG_ALLERGY",
+                "notes": "asd"
+            }
+        ],
+        "attachments": {
+            "sharedTokens": [
+                {
+                    "sharedTokenId": "RADIOLOGY_ORDER_4520ff21-4d11-4667-8d17-61b0705fe76e-dummy-image.png"
+                }
+            ],
+            "attachmentType": "RADIOLOGY_RESULT"
+        }
+    }
+}

@@ -1,0 +1,308 @@
+{
+    "eventId": "1235",
+    "eventType": "LAB_RESULT",
+    "uhrRequest": {
+        "id": 1002,
+        "midtableId": 2002,
+        "source": "LAB_RESULT_SYSTEM",
+        "createdDate": "2026-02-11T14:30:00+03:00",
+        "visitNumber": "LAB-RES-2026-001",
+        "compositionIdentifier": "COMP-2026-02-18-002",
+        "provider": {
+            "providerID": "11000000002333",
+            "providerName": "King Fahad Medical City Laboratory",
+            "nphiesOrganizationID": "2.16.840.1.113883.3.3731.1.2.2",
+            "nphiesOrganizationName": "King Fahad Medical City Laboratory",
+            "contactInfo": {
+                "phoneNumber": "+966112889999",
+                "email": "lab@kfmc.med.sa"
+            }
+        },
+        "caseInfo": {
+            "visitType": "OUTPATIENT",
+            "admissionMethod": "OTHER",
+            "visitNumber": "LAB-RES-2026-001",
+            "admitDate": "2026-02-11T08:00:00+03:00",
+            "dischargeDate": "2026-02-11T15:00:00+03:00",
+            "observations": {
+                "height": {
+                    "unit": "CENTIMETER",
+                    "value": 175
+                },
+                "weight": {
+                    "unit": "KILOGRAM",
+                    "value": 80
+                }
+            }
+        },
+        "patient": {
+            "id": "30000999999999",
+            "healthId": "30000999999999",
+            "documentId": "DOC-2026-03-09-001",
+            "age": 45,
+            "gender": "MALE",
+            "dateOfBirth": "1981-05-20",
+            "nationality": "saudi",
+            "maritalStatus": "MARRIED",
+            "contactInfo": {
+                "fullName": "MOHAMMED ABDULLAH AHMED",
+                "firstName": "MOHAMMED ABDULLAH",
+                "lastName": "AHMED",
+                "phoneNumber": "+966501234567",
+                "email": "mohammed.ahmed@email.sa",
+                "address": {
+                    "street": "King Fahd Road",
+                    "city": "Riyadh",
+                    "postalCode": "12345",
+                    "country": "Saudi Arabia"
+                }
+            }
+        },
+        "careTeam": [
+            {
+                "id": "LAB-TECH-001",
+                "nationalId": "05RM14422",
+                "contactInfo": {
+                    "fullName": "Dr. Fatima Hassan Al-Mutairi",
+                    "firstName": "Fatima",
+                    "lastName": "Al-Mutairi",
+                    "phoneNumber": "+966503456789"
+                }
+            }
+        ],
+        "diagnosis": [],
+        "services": [
+            {
+                "id": 1,
+                "code": "CBC",
+                "date": "2026-02-11T12:00:00+03:00",
+                "isLab": true,
+                "priority": "ROUTINE",
+                "isFasting": false,
+                "type": "Laboratory",
+                "description": "Complete Blood Count - Results",
+                "serviceInfo": {
+                    "laboratoryResults": [
+                        {
+                            "accessionNumber": "ACC-2026-001",
+                            "labDepartment": "HEMATOLOGY_STUDIES",
+                            "priority": "ROUTINE",
+                            "serviceRequestStatus": "COMPLETED",
+                            "sampleReceivedDate": "2026-02-11T09:00:00+03:00",
+                            "specimenCollection": {
+                                "specimenType": "BLD",
+                                "specimenSource": "BLD",
+                                "collectionDate": "2026-02-11T08:30:00+03:00",
+                                "specimenCollectionMethodEnum": "VENIP"
+                            },
+                            "sampleOperations": {
+                                "priority": "ROUTINE",
+                                "title": "Blood Sample Processing",
+                                "text": "Sample received and processed for CBC analysis"
+                            },
+                            "device": {
+                                "deviceIdentifier": "DEVICE-HEMA-XN1000",
+                                "modelName": "Sysmex XN-1000 Automated Hematology Analyzer",
+                                "softwareName": "XN-MASTER v2.5"
+                            },
+                            "sampleObservation": {
+                                "sampleObservationStartTime": "2026-02-11T10:00:00+03:00",
+                                "sampleObservationEndTime": "2026-02-11T10:30:00+03:00",
+                                "status": "FINAL",
+                                "observationNote": "CBC analysis completed successfully. All parameters within normal reference ranges.",
+                                "sampleResult": {
+                                    "valueQuantity": {
+                                        "value": "14.8",
+                                        "unit": "GRAM_PER_DECILITER"
+                                    },
+                                    "valueRange": {
+                                        "low": "13.5",
+                                        "unitLow": "GRAM_PER_DECILITER",
+                                        "high": "17.5",
+                                        "unitHigh": "GRAM_PER_DECILITER"
+                                    },
+                                    "sampleResultInterpretation": "NORMAL",
+                                    "text": "Hemoglobin: 14.8 g/dL - Normal range (13.5-17.5 g/dL for adult males)"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 2,
+                "code": "LIPID",
+                "date": "2026-02-11T12:30:00+03:00",
+                "isLab": true,
+                "priority": "ROUTINE",
+                "isFasting": true,
+                "type": "Laboratory",
+                "description": "Lipid Profile - Results",
+                "serviceInfo": {
+                    "laboratoryResults": [
+                        {
+                            "accessionNumber": "ACC-2026-002",
+                            "labDepartment": "BIOCHEMISTRY",
+                            "priority": "ROUTINE",
+                            "serviceRequestStatus": "COMPLETED",
+                            "sampleReceivedDate": "2026-02-11T09:15:00+03:00",
+                            "specimenCollection": {
+                                "specimenType": "BLD",
+                                "specimenSource": "BLD",
+                                "collectionDate": "2026-02-11T08:45:00+03:00",
+                                "specimenCollectionMethodEnum": "VENIP",
+                                "specimenHandlingText": "Patient fasted for 12 hours - confirmed"
+                            },
+                            "sampleOperations": {
+                                "priority": "ROUTINE",
+                                "title": "Lipid Profile Processing",
+                                "text": "Fasting blood sample processed for lipid panel analysis"
+                            },
+                            "device": {
+                                "deviceIdentifier": "DEVICE-CHEM-COBAS",
+                                "modelName": "Roche Cobas 8000 Chemistry Analyzer",
+                                "softwareName": "Cobas Link v3.1"
+                            },
+                            "sampleObservation": {
+                                "sampleObservationStartTime": "2026-02-11T10:30:00+03:00",
+                                "sampleObservationEndTime": "2026-02-11T11:15:00+03:00",
+                                "status": "FINAL",
+                                "observationNote": "Lipid profile completed. Total cholesterol and LDL slightly elevated.",
+                                "sampleResult": {
+                                    "valueQuantity": {
+                                        "value": "220",
+                                        "unit": "MILLIGRAM_PER_DECILITER"
+                                    },
+                                    "valueRange": {
+                                        "low": "0",
+                                        "unitLow": "MILLIGRAM_PER_DECILITER",
+                                        "high": "200",
+                                        "unitHigh": "MILLIGRAM_PER_DECILITER"
+                                    },
+                                    "sampleResultInterpretation": "HIGH",
+                                    "text": "Total Cholesterol: 220 mg/dL - Borderline High (Desirable: <200 mg/dL)"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 3,
+                "code": "HBA1C",
+                "date": "2026-02-11T13:00:00+03:00",
+                "isLab": true,
+                "priority": "ROUTINE",
+                "isFasting": false,
+                "type": "Laboratory",
+                "description": "Hemoglobin A1C - Results",
+                "serviceInfo": {
+                    "laboratoryResults": [
+                        {
+                            "accessionNumber": "ACC-2026-003",
+                            "labDepartment": "BIOCHEMISTRY",
+                            "priority": "ROUTINE",
+                            "serviceRequestStatus": "COMPLETED",
+                            "sampleReceivedDate": "2026-02-11T09:30:00+03:00",
+                            "specimenCollection": {
+                                "specimenType": "BLD",
+                                "specimenSource": "BLD",
+                                "collectionDate": "2026-02-11T09:00:00+03:00",
+                                "specimenCollectionMethodEnum": "VENIP"
+                            },
+                            "sampleOperations": {
+                                "priority": "ROUTINE",
+                                "title": "HbA1c Analysis",
+                                "text": "Sample processed for glycated hemoglobin measurement"
+                            },
+                            "device": {
+                                "deviceIdentifier": "DEVICE-HBA1C-BIO",
+                                "modelName": "Bio-Rad D-10 Hemoglobin Testing System",
+                                "softwareName": "D-10 Software v6.07"
+                            },
+                            "sampleObservation": {
+                                "sampleObservationStartTime": "2026-02-11T11:00:00+03:00",
+                                "sampleObservationEndTime": "2026-02-11T11:20:00+03:00",
+                                "status": "FINAL",
+                                "observationNote": "HbA1c test completed. Result indicates good glycemic control.",
+                                "sampleResult": {
+                                    "valueQuantity": {
+                                        "value": "5.8",
+                                        "unit": "PERCENT"
+                                    },
+                                    "valueRange": {
+                                        "low": "4.0",
+                                        "unitLow": "PERCENT",
+                                        "high": "5.6",
+                                        "unitHigh": "PERCENT"
+                                    },
+                                    "sampleResultInterpretation": "NORMAL",
+                                    "text": "HbA1c: 5.8% - Normal (Non-diabetic range: <5.7%, Pre-diabetes: 5.7-6.4%, Diabetes: ≥6.5%)"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 4,
+                "code": "TSH",
+                "date": "2026-02-11T13:30:00+03:00",
+                "isLab": true,
+                "priority": "ROUTINE",
+                "isFasting": false,
+                "type": "Laboratory",
+                "description": "Thyroid Stimulating Hormone - Results",
+                "serviceInfo": {
+                    "laboratoryResults": [
+                        {
+                            "accessionNumber": "ACC-2026-004",
+                            "labDepartment": "BIOCHEMISTRY",
+                            "priority": "ROUTINE",
+                            "serviceRequestStatus": "COMPLETED",
+                            "sampleReceivedDate": "2026-02-11T09:45:00+03:00",
+                            "specimenCollection": {
+                                "specimenType": "SER",
+                                "specimenSource": "SER",
+                                "collectionDate": "2026-02-11T09:15:00+03:00",
+                                "specimenCollectionMethodEnum": "VENIP"
+                            },
+                            "sampleOperations": {
+                                "priority": "ROUTINE",
+                                "title": "TSH Immunoassay",
+                                "text": "Serum sample processed for TSH measurement using chemiluminescence"
+                            },
+                            "device": {
+                                "deviceIdentifier": "DEVICE-IMMUNO-ARCHITECT",
+                                "modelName": "Abbott Architect i2000SR Immunoassay Analyzer",
+                                "softwareName": "Architect Software v8.2"
+                            },
+                            "sampleObservation": {
+                                "sampleObservationStartTime": "2026-02-11T11:30:00+03:00",
+                                "sampleObservationEndTime": "2026-02-11T12:00:00+03:00",
+                                "status": "FINAL",
+                                "observationNote": "TSH test completed. Result within normal reference range - thyroid function normal.",
+                                "sampleResult": {
+                                    "valueQuantity": {
+                                        "value": "2.5",
+                                        "unit": "MICRO_INTERNATIONAL_UNIT_PER_MILLILITER"
+                                    },
+                                    "valueRange": {
+                                        "low": "0.4",
+                                        "unitLow": "MICRO_INTERNATIONAL_UNIT_PER_MILLILITER",
+                                        "high": "4.0",
+                                        "unitHigh": "MICRO_INTERNATIONAL_UNIT_PER_MILLILITER"
+                                    },
+                                    "sampleResultInterpretation": "NORMAL",
+                                    "text": "TSH: 2.5 µIU/mL - Normal (Reference range: 0.4-4.0 µIU/mL)"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "medication": [],
+        "allergy": []
+    }
+}

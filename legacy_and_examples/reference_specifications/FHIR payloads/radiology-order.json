@@ -1,0 +1,97 @@
+{
+    "eventId": "1235",
+    "eventType": "RADIOLOGY_ORDER",
+    "uhrRequest": {
+        "id": 1001,
+        "midtableId": 1001,
+        "source": "AGENT_HUB",
+        "createdDate": "2026-03-07T10:30:00+03:00",
+        "visitNumber": "VISIT-RAD-ORD-0001",
+        "provider": {
+            "providerID": "11000000002333",
+            "providerName": "Waseel Medical Center",
+            "nphiesOrganizationID": "2.16.840.1.113883.3.3731.1.2.2",
+            "nphiesOrganizationName": "Waseel Provider Organization",
+            "contactInfo": {
+                "fullName": "Provider Contact",
+                "phoneNumber": "+966500000001",
+                "email": "provider@waseel.com"
+            }
+        },
+        "caseInfo": {
+            "visitType": "OUTPATIENT",
+            "admissionMethod": "OTHER",
+            "visitNumber": "VISIT-RAD-ORD-0001",
+            "admitDate": "2026-03-07T10:00:00+03:00",
+            "dischargeDate": "2026-03-07T11:00:00+03:00"
+        },
+        "patient": {
+            "id": "30000999999999",
+            "healthId": "30000999999999",
+            "documentId": "DOC-2026-04-06-001",
+            "documentType": "NATIONAL_ID",
+            "age": 35,
+            "gender": "MALE",
+            "dateOfBirth": "1991-01-15",
+            "nationality": "SA",
+            "preferredLanguage": "ar",
+            "religion": "Islam",
+            "maritalStatus": "SINGLE",
+            "contactInfo": {
+                "fullName": "Patient One",
+                "phoneNumber": "+966500000101"
+            }
+        },
+        "careTeam": [
+            {
+                "id": "CT-001",
+                "nationalId": "05RM14422",
+                "type": "Physician",
+                "speciality": "Radiology",
+                "role": "Ordering Physician",
+                "qualification": "Consultant Radiologist",
+                "isAuthenticator": true,
+                "isPerformer": true,
+                "contactInfo": {
+                    "fullName": "Dr. Radiology"
+                }
+            }
+        ],
+        "diagnosis": [
+            {
+                "id": 1,
+                "code": "HOSPITAL_ADMISSION_DX",
+                "priority": "PRINCIPAL"
+            }
+        ],
+        "services": [
+            {
+                "id": 1,
+                "code": "CT-HEAD-WO-CONTRAST",
+                "date": "2026-03-07T10:30:00+03:00",
+                "isLab": false,
+                "priority": "routine",
+                "isFasting": false,
+                "type": "radiology",
+                "description": "CT head without contrast",
+                "serviceInfo": {
+                    "radiologyProcedures": [
+                        {
+                            "procedure": "CS-Rad-Procedure",
+                            "procedureDescription": "CT head without contrast",
+                            "modality": "COMPUTED_TOMOGRAPHY",
+                            "modalityDescription": "Computed Tomography",
+                            "bodySite": "HEAD_STRUCTURE",
+                            "bodySiteDescription": "Head",
+                            "orderIdentifier": "RAD-ORD-0001",
+                            "accessionNumber": "RAD-ACC-0001",
+                            "priority": "ROUTINE",
+                            "serviceRequestStatus": "ACTIVE",
+                            "requestedDate": "2026-03-07T10:35:00+03:00"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

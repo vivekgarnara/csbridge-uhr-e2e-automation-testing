@@ -1,0 +1,200 @@
+{
+    "eventId": "1235",
+    "eventType": "RADIOLOGY_ORDER",
+    "uhrRequest": {
+        "id": 1,
+        "midtableId": 1,
+        "source": "123",
+        "createdDate": "2025-10-30T09:15:00+03:00",
+        "visitNumber": "202510300001",
+        "provider": {
+            "providerID": 15,
+            "providerName": "International University Hospital",
+            "nphiesOrganizationName": "International University Hospital",
+            "nphiesOrganizationID": "15000000112233",
+            "contactInfo": {
+                "phoneNumber": "+966112345678",
+                "email": "info@nhicclinic.sa",
+                "address": {
+                    "street": "3920 Mathar Alshibani St",
+                    "city": "Riyadh",
+                    "postalCode": "12211",
+                    "country": "Saudi Arabia"
+                }
+            }
+        },
+        "caseInfo": {
+            "visitType": "INPATIENT",
+            "patientLocation": {
+                "room": "101",
+                "bed": "A",
+                "pointOfCare": "MED-UNIT-1",
+                "facilityId": "2.16.840.1.113883.3.3731.1.2.2"
+            },
+            "admissionMethod": "OTHER",
+            "visitNumber": "202510300001",
+            "admitDate": "2025-10-30T09:15:00+03:00",
+            "dischargeDate": "",
+            "lengthOfStay": 3,
+            "department": {
+                "key": "MT28",
+                "value": "Pediatrics Gastroenterology"
+            },
+            "observations": {
+                "height": {
+                    "unit": "CENTIMETER",
+                    "value": 175
+                },
+                "weight": {
+                    "unit": "KILOGRAM",
+                    "value": 70
+                },
+                "preliminaryDiagnosis": "Possible myocardial infarction",
+                "preexistingCondition": "Hypertension",
+                "riskFactors": "Smoking",
+                "chronologicalAge": "45",
+                "fasting": "NON_FASTING",
+                "medicalHistory": "Patient has a history of high blood pressure."
+            }
+        },
+        "patient": {
+            "id": 2267,
+            "healthId": "30511223344557",
+            "age": 40,
+            "gender": "MALE",
+            "dateOfBirth": "1985-01-15",
+            "nationality": "SAU",
+            "contactInfo": {
+                "name": "Mohammed Al-Ghamdi",
+                "phoneNumber": "+966501234567",
+                "address": {
+                    "street": "2448 Zarga Alyamamah St",
+                    "city": "Riyadh",
+                    "postalCode": "13337",
+                    "country": "Saudi Arabia"
+                }
+            },
+            "maritalStatus": "MARRIED",
+            "guardianContactInfo": {
+                "name": "Mohammed Al-Ghamdi",
+                "phoneNumber": "+966501234567",
+                "address": {
+                    "street": "Al Olaya St",
+                    "city": "Riyadh",
+                    "postalCode": "13337",
+                    "country": "Saudi Arabia"
+                }
+            }
+        },
+        "careTeam": [
+            {
+                "id": "05RM14422",
+                "nationalId": "102344",
+                "contactInfo": {
+                    "name": "Abdullah Al-Harbi",
+                    "phoneNumber": "+966509876543",
+                    "email": "abdullah.alharbi@nhicclinic.sa",
+                    "address": {
+                        "street": "3920 Mathar Alshibani St",
+                        "city": "Riyadh",
+                        "postalCode": "12629",
+                        "country": "Saudi Arabia"
+                    }
+                },
+                "type": "doctor",
+                "speciality": "Healthcare Specialty Identifier",
+                "notes": "Attending physician for cardiac observation case",
+                "role": "Attending Doctor"
+            }
+        ],
+        "diagnosis": [
+            {
+                "id": 1,
+                "code": "PREOPERATIVE_DIAGNOSIS",
+                "priority": "PRINCIPAL",
+                "info": [
+                    {
+                        "diagnosisProcedureCode": "M25.46",
+                        "description": "Effusion of joint, lower leg",
+                        "dateFrom": "2025-12-10",
+                        "dateTo": "2025-12-20",
+                        "status": "ACTIVE"
+                    }
+                ]
+            }
+        ],
+        "services": [
+            {
+                "id": 3,
+                "code": "new",
+                "date": "2023-01-15",
+                "isLab": false,
+                "priorty": "ASAP",
+                "isFasting": true
+            },
+            {
+                "id": 4,
+                "code": "XCHES",
+                "date": "",
+                "isLab": false,
+                "priorty": "ASAP",
+                "isFasting": true,
+                "serviceInfo": {
+                    "radiologyProcedures": [
+                        {
+                            "procedure": "XCHES",
+                            "procedureDescription": "XR Chest",
+                            "modality": "RADIOGRAPHIC_IMAGING",
+                            "modalityDescription": "Radiographic imaging",
+                            "bodySite": "BREAST_STRUCTURE",
+                            "bodySiteDescription": "breast structure"
+                        }
+                    ]
+                }
+            }
+        ],
+        "medication": [
+            {
+                "id": 4,
+                "code": "1521361234",
+                "dosage": {
+                    "form": "tablet",
+                    "prescriptionValidityPeriod": {
+                        "start": "",
+                        "end": ""
+                    },
+                    "quantity": {
+                        "unit": "GRAM",
+                        "value": "1"
+                    },
+                    "duration": {
+                        "unit": "DAY",
+                        "value": "1"
+                    },
+                    "dosagePeriod": {
+                        "start": "",
+                        "end": ""
+                    },
+                    "instruction": "",
+                    "route": ""
+                },
+                "prescriptionType": "CONTROLLED",
+                "notes": ""
+            }
+        ],
+        "operativeNotes": [
+            {
+                "key": "CHIEF_COMPLAINT",
+                "description": "Patient feels pressure on the lungs"
+            }
+        ],
+        "allergy": [
+            {
+                "code": 123,
+                "severity": "SEVERE",
+                "type": "DRUG_ALLERGY",
+                "notes": "asd"
+            }
+        ]
+    }
+}

@@ -1,0 +1,214 @@
+{
+    "eventId": "1235",
+    "eventType": "LAB_ORDER",
+    "uhrRequest": {
+        "id": 1001,
+        "midtableId": 2001,
+        "source": "LAB_ORDER_SYSTEM",
+        "createdDate": "2026-02-11T10:30:00+03:00",
+        "visitNumber": "LAB-ORD-2026-001",
+        "compositionIdentifier": "COMP-2026-02-18-001",
+        "provider": {
+            "providerID": "11000000002333",
+            "providerName": "King Fahad Medical City Laboratory",
+            "nphiesOrganizationID": "2.16.840.1.113883.3.3731.1.2.2",
+            "nphiesOrganizationName": "King Fahad Medical City Laboratory",
+            "contactInfo": {
+                "phoneNumber": "+966112889999",
+                "email": "lab@kfmc.med.sa"
+            }
+        },
+        "caseInfo": {
+            "visitType": "OUTPATIENT",
+            "admissionMethod": "OTHER",
+            "visitNumber": "LAB-ORD-2026-001",
+            "admitDate": "2026-02-11T08:00:00+03:00",
+            "dischargeDate": "2026-02-11T12:00:00+03:00",
+            "observations": {
+                "height": {
+                    "unit": "CENTIMETER",
+                    "value": 175
+                },
+                "weight": {
+                    "unit": "KILOGRAM",
+                    "value": 80
+                }
+            }
+        },
+        "patient": {
+            "id": "30000999999999",
+            "healthId": "30000999999999",
+            "documentId": "DOC-2026-03-09-001",
+            "age": 45,
+            "gender": "MALE",
+            "dateOfBirth": "1981-05-20",
+            "nationality": "saudi",
+            "maritalStatus": "MARRIED",
+            "contactInfo": {
+                "fullName": "MOHAMMED ABDULLAH AHMED",
+                "firstName": "MOHAMMED ABDULLAH",
+                "lastName": "AHMED",
+                "phoneNumber": "+966501234567",
+                "email": "mohammed.ahmed@email.sa",
+                "address": {
+                    "street": "King Fahd Road",
+                    "city": "Riyadh",
+                    "postalCode": "12345",
+                    "country": "Saudi Arabia"
+                }
+            }
+        },
+        "careTeam": [
+            {
+                "id": "PHYSICIAN-001",
+                "nationalId": "1234567890",
+                "contactInfo": {
+                    "fullName": "Dr. Khalid Ibrahim Al-Rashid",
+                    "firstName": "Khalid",
+                    "lastName": "Al-Rashid",
+                    "phoneNumber": "+966502345678"
+                }
+            }
+        ],
+        "diagnosis": [],
+        "services": [
+            {
+                "id": 1,
+                "code": "CBC",
+                "date": "2026-02-11T09:00:00+03:00",
+                "isLab": true,
+                "priority": "routine",
+                "isFasting": false,
+                "type": "Laboratory",
+                "description": "Complete Blood Count",
+                "serviceInfo": {
+                    "laboratoryOrders": [
+                        {
+                            "orderIdentifier": "ORD-CBC-2026-001",
+                            "labDepartment": "HEMATOLOGY_STUDIES",
+                            "priority": "ROUTINE",
+                            "serviceRequestStatus": "ACTIVE",
+                            "specimenCollection": {
+                                "specimenType": "BLD",
+                                "specimenSource": "BLD",
+                                "collectionDate": "2026-02-11T08:30:00+03:00",
+                                "specimenCollectionMethodEnum": "VENIP"
+                            },
+                            "sampleOperations": [
+                                {
+                                    "priority": "ROUTINE",
+                                    "title": "Blood Sample Collection",
+                                    "text": "Venous blood sample collected for CBC analysis"
+                                }
+                            ],
+                            "specimenHandlingNote": "Handle with standard precautions"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 2,
+                "code": "LIPID",
+                "date": "2026-02-11T09:30:00+03:00",
+                "isLab": true,
+                "priority": "routine",
+                "isFasting": true,
+                "type": "Laboratory",
+                "description": "Lipid Profile - Fasting Required",
+                "serviceInfo": {
+                    "laboratoryOrders": [
+                        {
+                            "orderIdentifier": "ORD-LIPID-2026-002",
+                            "labDepartment": "BIOCHEMISTRY",
+                            "priority": "ROUTINE",
+                            "serviceRequestStatus": "ACTIVE",
+                            "specimenCollection": {
+                                "specimenType": "BLD",
+                                "specimenSource": "BLD",
+                                "collectionDate": "2026-02-11T08:45:00+03:00",
+                                "specimenCollectionMethodEnum": "VENIP",
+                                "specimenHandlingText": "Patient fasted for 12 hours"
+                            },
+                            "sampleOperations": [
+                                {
+                                    "priority": "ROUTINE",
+                                    "title": "Fasting Blood Sample",
+                                    "text": "Fasting venous blood sample collected for lipid profile"
+                                }
+                            ],
+                            "specimenHandlingNote": "Patient confirmed 12-hour fasting period"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 3,
+                "code": "HBA1C",
+                "date": "2026-02-11T10:00:00+03:00",
+                "isLab": true,
+                "priority": "routine",
+                "isFasting": false,
+                "type": "Laboratory",
+                "description": "Hemoglobin A1C - Diabetes Monitoring",
+                "serviceInfo": {
+                    "laboratoryOrders": [
+                        {
+                            "orderIdentifier": "ORD-HBA1C-2026-003",
+                            "labDepartment": "BIOCHEMISTRY",
+                            "priority": "ROUTINE",
+                            "serviceRequestStatus": "ACTIVE",
+                            "specimenCollection": {
+                                "specimenType": "BLD",
+                                "specimenSource": "BLD",
+                                "collectionDate": "2026-02-11T09:00:00+03:00",
+                                "specimenCollectionMethodEnum": "VENIP"
+                            },
+                            "sampleOperations": [
+                                {
+                                    "priority": "ROUTINE",
+                                    "title": "Blood Sample for HbA1c",
+                                    "text": "Venous blood sample collected for HbA1c testing"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 4,
+                "code": "TSH",
+                "date": "2026-02-11T10:15:00+03:00",
+                "isLab": true,
+                "priority": "routine",
+                "isFasting": false,
+                "type": "Laboratory",
+                "description": "Thyroid Stimulating Hormone",
+                "serviceInfo": {
+                    "laboratoryOrders": [
+                        {
+                            "orderIdentifier": "ORD-TSH-2026-004",
+                            "labDepartment": "BIOCHEMISTRY",
+                            "priority": "ROUTINE",
+                            "serviceRequestStatus": "ACTIVE",
+                            "specimenCollection": {
+                                "specimenType": "SER",
+                                "specimenSource": "SER",
+                                "collectionDate": "2026-02-11T09:15:00+03:00",
+                                "specimenCollectionMethodEnum": "VENIP"
+                            },
+                            "sampleOperations": [
+                                {
+                                    "priority": "ROUTINE",
+                                    "title": "Serum Collection",
+                                    "text": "Serum sample collected for TSH measurement"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "medication": [],
+        "allergy": []
+    }
+}
